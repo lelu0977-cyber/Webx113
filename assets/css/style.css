@@ -737,9 +737,34 @@ body::before {
   gap: 24px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin: 0 -16px;
+    padding: 10px 16px 22px 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(249, 115, 22, 0.4) transparent;
+  }
+  .projects-grid::-webkit-scrollbar {
+    height: 5px;
+  }
+  .projects-grid::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.4);
+    border-radius: 99px;
+  }
+  .projects-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+  }
+  .project-card {
+    flex: 0 0 85%;
+    max-width: 85%;
+    min-width: 280px;
+    scroll-snap-align: center;
   }
 }
 
@@ -962,11 +987,64 @@ body::before {
   align-items: stretch;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 769px) and (max-width: 960px) {
   .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin: 0 -16px;
+    padding: 24px 16px 26px 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(249, 115, 22, 0.4) transparent;
+    max-width: 100%;
+  }
+  .pricing-grid::-webkit-scrollbar {
+    height: 5px;
+  }
+  .pricing-grid::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.4);
+    border-radius: 99px;
+  }
+  .pricing-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+  }
+  .pricing-card {
+    flex: 0 0 85%;
+    max-width: 85%;
+    min-width: 280px;
+    scroll-snap-align: center;
+  }
+}
+
+.swipe-hint {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--orange-2);
+    font-weight: 600;
+    margin: 8px 0 16px;
+    animation: swipePulse 2s infinite ease-in-out;
+  }
+  @keyframes swipePulse {
+    0%, 100% { opacity: 0.8; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(5px); }
   }
 }
 
@@ -1200,17 +1278,9 @@ body::before {
 }
 
 .register-inner {
-  display: grid;
-  grid-template-columns: 1fr 440px;
-  gap: 70px;
-  align-items: start;
-}
-
-@media (max-width: 960px) {
-  .register-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+  max-width: 860px;
+  margin: 0 auto;
+  display: block;
 }
 
 .steps-list {
