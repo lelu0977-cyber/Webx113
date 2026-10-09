@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kho Dự Án Đã Triển Khai — Webx113.com</title>
+  <meta name="description" content="Danh mục các website thực tế đã bàn giao của Webx113: Nha khoa, Spa trị liệu, Bán sách Ebook, Bán hàng, Doanh nghiệp... Kèm link xem trực tiếp và đánh giá feedback từ khách hàng." />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f97316'/><text y='70' x='15' font-size='60' font-weight='bold' fill='white'>W</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-badge">W</div>
+        <div>
+          <span class="nav-logo-text">Webx113</span>
+          <span class="nav-logo-sub">Fast Web Agency</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="du-an.html" class="active">Dự Án Thực Tế</a></li>
+        <li><a href="bang-gia.html">Bảng Giá</a></li>
+        <li><a href="index.html#about">Về Webx113</a></li>
+        <li><a href="tin-tuc.html">Cẩm Nang Web</a></li>
+        <li><a href="lien-he.html" class="nav-highlight">⚡ Nhận Báo Giá 15 Phút</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER HERO BANNER -->
+  <header style="padding: 60px 0 30px; text-align: center; position: relative;">
+    <div class="ambient-glow glow-teal" style="width:500px; height:500px; top:-100px; left:50%; transform:translateX(-50%);"></div>
+    <div class="container">
+      <div class="pill pill-teal">Portfolio Thực Chiến</div>
+      <h1 class="section-title">Kho Dự Án Đã Hoàn Thành Của Webx113</h1>
+      <p class="section-sub">
+        Mỗi website là một giải pháp kinh doanh thực tế, hoàn thành trong 2 - 4 ngày với chi phí 1.2 — 5 triệu đồng, kèm đánh giá khách quan từ chính chủ cơ sở.
+      </p>
+
+      <!-- Filter Buttons -->
+      <div class="filter-tabs" style="margin-top: 36px;">
+        <button class="filter-btn active" data-filter="all">Tất Cả Mẫu Web</button>
+        <button class="filter-btn" data-filter="medical">Nha Khoa & Y Tế</button>
+        <button class="filter-btn" data-filter="spa">Spa & Làm Đẹp</button>
+        <button class="filter-btn" data-filter="ebook">Đào Tạo & Khóa Học</button>
+        <button class="filter-btn" data-filter="retail">Bán Hàng & E-commerce</button>
+        <button class="filter-btn" data-filter="bds">Bất Động Sản & Xây Dựng</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS SECTION -->
+  <main class="container" style="padding-bottom: 100px;">
+    <div class="projects-grid">
+
+      <!-- PROJECT 1: SATR.VN -->
+      <div class="project-card" data-cat="medical">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">⭐ Đánh giá 4.9/5.0</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color:#fff; font-size:52px;">
+            🦷
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Nha Khoa Thẩm Mỹ · Hà Nội</span>
+            <span class="project-price-estimate">Bàn giao: 3 Ngày</span>
+          </div>
+          <h3 class="project-title">Nha Khoa Thẩm Mỹ Star — 57 Lê Văn Hưu, Hà Nội</h3>
+          <p class="project-desc">Website giới thiệu nha khoa thẩm mỹ cao cấp tại trung tâm Hai Bà Trưng. Tích hợp cấy ghép Implant, niềng răng US 5D, bọc sứ và form đặt hẹn bác sĩ.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết công nghệ & Feedback <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Công nghệ & Điểm nhấn</div>
+            <ul class="expand-list">
+              <li>Mã nguồn tĩnh tối ưu tốc độ tải trang cực nhanh</li>
+              <li>Bộ nhận diện thương hiệu chuyên nghiệp, chuẩn y tế</li>
+              <li>Tích hợp định vị Google Maps 57 Lê Văn Hưu</li>
+              <li>Nút gọi điện thoại tư vấn khẩn cấp nổi bật</li>
+            </ul>
+
+            <div class="expand-label">Feedback Khách Hàng</div>
+            <div class="feedback-box">
+              <div class="feedback-header">
+                <span class="feedback-author">Bác sĩ Nguyễn Văn Cường (Chủ phòng khám)</span>
+                <span class="feedback-stars">★★★★★</span>
+              </div>
+              <p class="feedback-text">"Giao diện chuẩn y khoa hiện đại, khách xem web đều ấn tượng và tin tưởng đặt lịch khám ngay. Cảm ơn Long vì sự hỗ trợ nhanh chóng!"</p>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://lelu0977-cyber.github.io/Satr.vn/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Nha Khoa Star')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: SMILE.VN -->
+      <div class="project-card" data-cat="medical">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">⭐ Đánh giá 5.0/5.0</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0d9488 0%, #115e59 100%); color:#fff; font-size:52px;">
+            🏥
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Nha Khoa Công Nghệ Cao · Phú Thọ</span>
+            <span class="project-price-estimate">Bàn giao: 2 Ngày</span>
+          </div>
+          <h3 class="project-title">Nha Khoa Bách Khoa Smile — 16 Lạc Long Quân</h3>
+          <p class="project-desc">Trang web hệ thống nha khoa chuẩn Đức 5.0 sao. Đầy đủ trang giới thiệu máy móc vô trùng, đội ngũ bác sĩ, bảng giá và bài viết tư vấn sức khỏe răng miệng.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết công nghệ & Feedback <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Công nghệ & Điểm nhấn</div>
+            <ul class="expand-list">
+              <li>Menu đa cấp điều hướng bài bản theo chuyên khoa</li>
+              <li>Bộ lọc bảng giá và dịch vụ cấy ghép implant, niềng răng</li>
+              <li>Tối ưu hiển thị tuyệt đối trên các dòng điện thoại thông minh</li>
+            </ul>
+
+            <div class="expand-label">Feedback Khách Hàng</div>
+            <div class="feedback-box">
+              <div class="feedback-header">
+                <span class="feedback-author">Bác sĩ Hoàng Tuấn Anh</span>
+                <span class="feedback-stars">★★★★★</span>
+              </div>
+              <p class="feedback-text">"Website hoàn thiện rất nhanh chỉ sau 48h, bàn giao đầy đủ hướng dẫn quản trị. Rất yên tâm khi hợp tác cùng Webx113!"</p>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://lelu0977-cyber.github.io/Smile.vn/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Nha Khoa Bách Khoa Smile')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: WELLNESS-SAPA -->
+      <div class="project-card" data-cat="spa">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">⭐ Đánh giá 4.8/5.0</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1e3a2f 0%, #245943 100%); color:#d4af37; font-size:52px;">
+            🌿
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Spa & Dưỡng Sinh Trị Liệu · Hoàn Kiếm</span>
+            <span class="project-price-estimate">Bàn giao: 3 Ngày</span>
+          </div>
+          <h3 class="project-title">Be Wellness Spa — 10 Nguyễn Quang Bích, Hà Nội</h3>
+          <p class="project-desc">Website không gian spa nghỉ dưỡng sang trọng thuộc Bespoke Hotels Hanoi. Giới thiệu dịch vụ mát-xa trị liệu, gội đầu dưỡng sinh bằng thảo mộc Á Đông.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết công nghệ & Feedback <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Công nghệ & Điểm nhấn</div>
+            <ul class="expand-list">
+              <li>Thiết kế Luxury Spa tông màu trầm ấm quý tộc</li>
+              <li>Bộ ảnh dịch vụ chất lượng cao tối ưu dung lượng tải nhẹ</li>
+              <li>Nút Zalo và hotline đa ngôn ngữ hỗ trợ du khách quốc tế</li>
+            </ul>
+
+            <div class="expand-label">Feedback Khách Hàng</div>
+            <div class="feedback-box">
+              <div class="feedback-header">
+                <span class="feedback-author">Chị Trần Mai Linh (Quản lý Be Wellness Spa)</span>
+                <span class="feedback-stars">★★★★★</span>
+              </div>
+              <p class="feedback-text">"Giao diện spa toát lên sự thư thái và chuyên nghiệp. Lượng khách du lịch liên hệ đặt phòng và lịch trị liệu qua Zalo tăng rõ rệt!"</p>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://longlesinep114-web.github.io/Wellness-sapa/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Be Wellness Spa')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: GIAO TIẾP ỨNG XỬ EBOOK -->
+      <div class="project-card" data-cat="ebook">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">⭐ Đánh giá 5.0/5.0</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0b1d26 0%, #0e242f 100%); color:#fbd784; font-size:52px;">
+            📖
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Đào Tạo & Landing Page Ebook</span>
+            <span class="project-price-estimate">Bàn giao: 2 Ngày</span>
+          </div>
+          <h3 class="project-title">Ebook: Nghệ Thuật Giao Tiếp Khéo Léo & Ứng Xử</h3>
+          <p class="project-desc">Trang Landing Page bán sách điện tử và khóa học kỹ năng mềm 2026. Bố cục Dark Pine phong cách tạp chí quốc tế, chương học trực quan, form nhận sách tức thì.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết công nghệ & Feedback <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Công nghệ & Điểm nhấn</div>
+            <ul class="expand-list">
+              <li>Cấu trúc phễu bán hàng (Sales Funnel) kích thích mua ngay</li>
+              <li>Tích hợp mã QR thanh toán nhanh nhận link tải Ebook</li>
+              <li>Bộ đếm giờ ưu đãi và feedback độc giả sinh động</li>
+            </ul>
+
+            <div class="expand-label">Feedback Khách Hàng</div>
+            <div class="feedback-box">
+              <div class="feedback-header">
+                <span class="feedback-author">Tác giả Phạm Minh Đức</span>
+                <span class="feedback-stars">★★★★★</span>
+              </div>
+              <p class="feedback-text">"Landing page được thiết kế tỉ mỉ từng chi tiết typography. Tỷ lệ chuyển đổi đơn hàng vượt xa mong đợi của mình!"</p>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://longlesinep114-web.github.io/giao-ti-p-ng-x-/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Landing Page Ebook')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+      <!-- DEMO EXPANSION 5: SHOP THỜI TRANG E-COMMERCE -->
+      <div class="project-card" data-cat="retail">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">Gói Bán Hàng 5Tr</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #831843 0%, #be185d 100%); color:#fff; font-size:52px;">
+            👗
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Thời Trang & Bán Lẻ</span>
+            <span class="project-price-estimate">Bàn giao: 3 - 4 Ngày</span>
+          </div>
+          <h3 class="project-title">Mẫu Web Shop Thời Trang & Phụ Kiện Cao Cấp</h3>
+          <p class="project-desc">Website bán hàng hiện đại đầy đủ giỏ hàng, bảng chọn kích thước/màu sắc, tích hợp Chatbot tư vấn size tự động và thanh toán QR tự động qua ngân hàng.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết tính năng <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Tính năng nổi bật</div>
+            <ul class="expand-list">
+              <li>Quản lý danh mục sản phẩm không giới hạn</li>
+              <li>Bộ lọc giá, size, màu sắc cực mượt</li>
+              <li>Thông báo đơn hàng mới ngay lập tức qua Zalo/Email</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-actions">
+          <button class="btn btn-teal btn-sm" onclick="openModal('Demo Mẫu Thời Trang')">Xem Demo Trực Tiếp</button>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Thời Trang E-commerce')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+      <!-- DEMO EXPANSION 6: BẤT ĐỘNG SẢN & NỘI THẤT -->
+      <div class="project-card" data-cat="bds">
+        <div class="project-thumb-wrap">
+          <span class="project-badge-tag">Gói Doanh Nghiệp 2.8Tr</span>
+          <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1e293b 0%, #334155 100%); color:#fbbf24; font-size:52px;">
+            🏢
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category">Bất Động Sản & Xây Dựng</span>
+            <span class="project-price-estimate">Bàn giao: 2 - 3 Ngày</span>
+          </div>
+          <h3 class="project-title">Mẫu Landing Page Dự Án Căn Hộ & Bất Động Sản</h3>
+          <p class="project-desc">Giao diện thuyết phục nhà đầu tư: Bảng mặt bằng 3D, tiến độ thi công, chính sách chiết khấu, bảng tính lãi suất trả góp và form nhận bảng giá kín.</p>
+          
+          <button class="expand-btn" onclick="toggleProject(this)">
+            Xem chi tiết tính năng <span class="expand-arrow">▾</span>
+          </button>
+          <div class="expand-content">
+            <div class="expand-label">Tính năng nổi bật</div>
+            <ul class="expand-list">
+              <li>Form tải tài liệu dự án tự động thu lead chất lượng</li>
+              <li>Hiển thị định vị vị trí kết nối giao thông vệ tinh</li>
+              <li>Nút Zalo rung lắc gọi chuyên viên tư vấn 24/7</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-actions">
+          <button class="btn btn-teal btn-sm" onclick="openModal('Demo Mẫu Bất Động Sản')">Xem Demo Trực Tiếp</button>
+          <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Bất Động Sản')">Chọn Mẫu Này</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CALL TO ACTION BOX -->
+    <div style="margin-top:70px; background:linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(20,184,166,0.1) 100%); border:1px solid rgba(249,115,22,0.3); border-radius:var(--radius-xl); padding:40px; text-align:center;">
+      <h2 style="font-size:26px; font-weight:800; color:#fff; margin-bottom:12px;">Bạn Cần Thiết Kế Theo Mẫu Riêng Của Mình?</h2>
+      <p style="font-size:15px; color:var(--text-2); max-width:600px; margin:0 auto 24px;">
+        Chỉ cần gửi link website bạn thích hoặc ý tưởng phác thảo, Webx113 sẽ dựng demo hoàn chỉnh cho bạn xem trước chỉ sau 2 giờ làm việc!
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          💬 Gửi Mẫu Qua Zalo: 0325477523
+        </a>
+        <a href="bang-gia.html" class="btn btn-ghost btn-lg">Xem Bảng Giá Chi Tiết →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Webx113.com</div>
+          <p class="footer-desc">
+            Dịch vụ thiết kế website theo yêu cầu uy tín hàng đầu. Siêu tốc 2 - 4 ngày, chi phí 1.2 — 5 triệu đồng, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo chốt khách tự động.
+          </p>
+          <div style="font-size:13px; color:var(--text-2);">
+            Đại diện: <b>Lê Thành Long</b> (Hotline: 0325477523)
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Liên Kết Nhanh</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="du-an.html">Kho Dự Án Thực Tế</a></li>
+            <li><a href="bang-gia.html">Bảng Giá Chi Tiết</a></li>
+            <li><a href="tin-tuc.html">Cẩm Nang Làm Web</a></li>
+            <li><a href="lien-he.html">Liên Hệ & Đặt Cọc</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Thông Tin Liên Hệ</div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <a href="tel:0325477523">Hotline: 0325477523</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>💬</span>
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener">Zalo: 0325477523 (Lê Thành Long)</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>💳</span>
+            <span>Techcombank: 1104 2006 01</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Webx113.com. Bản quyền thuộc về Lê Thành Long.</div>
+        <div>Thiết kế với phong cách Dark Modern UI công nghệ cao.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BUTTONS -->
+  <div class="floating-actions">
+    <button class="float-btn btn-float-chat" onclick="toggleChatbot()" title="Tư vấn với AI Chatbot">🤖</button>
+    <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="float-btn btn-float-zalo" title="Chat Zalo ngay">
+      <svg viewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24c0 4.14 1.27 8.01 3.44 11.23L5 43l8.03-2.39C16.14 42.71 19.95 44 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm8.7 26.23c-.38.98-2.22 1.88-3.07 1.99-.81.1-1.85.15-3.01-.23-1.63-.53-4.08-1.74-6.44-4.1-3.03-3.03-4.48-6.17-4.88-7.92-.35-1.52.26-2.58.75-3.07.49-.49 1.13-.7 1.63-.7.5 0 .86.03 1.23.07.39.05.86-.16 1.34 1.01.5 1.23 1.73 4.22 1.88 4.53.15.31.25.68.04 1.1-.21.41-.32.67-.63 1.04-.32.36-.66.8-.94 1.07-.32.32-.65.66-.28 1.3.37.64 1.65 2.73 3.55 4.42 2.44 2.18 4.49 2.85 5.13 3.17.64.32 1.01.27 1.39-.16.38-.44 1.63-1.9 2.06-2.55.44-.66.87-.55 1.48-.32.6.22 3.86 1.82 4.52 2.15.66.33 1.1.5 1.26.77.16.27.16 1.57-.22 2.55z"/></svg>
+    </a>
+    <a href="tel:0325477523" class="float-btn btn-float-hotline" title="Gọi Hotline: 0325477523">📞</a>
+  </div>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-name">Trợ Lý AI Webx113</div>
+          <div class="chat-status"><span class="live-dot" style="width:6px;height:6px;"></span> Sẵn sàng 24/7</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg msg-bot">
+        Chào bạn! Bạn vừa xem các dự án thực tế của Webx113. Bạn muốn thiết kế website tương tự mẫu nào hay cần tư vấn mức giá cụ thể?
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Nhập câu hỏi của bạn..." />
+      <button class="chat-send-btn" id="chatSendBtn">➤</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HIGH FIDELITY 2-STEP MODAL (MATCHING SCREENSHOT)
+  ============================================================ -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Đăng ký thiết kế website</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Đóng">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- STEP 1: SERVICE DETAILS & CUSTOMER INFO -->
+        <div class="checkout-grid" id="checkoutStep1">
+          <div class="checkout-col-left">
+            <div>
+              <div class="service-header-card">
+                <div class="service-thumb">🌐</div>
+                <div>
+                  <div class="service-title-text" id="modalServiceTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+                  <div style="font-size:12px; color:#2563eb; font-weight:700;">Webx113.com · Bàn giao 2 - 4 ngày</div>
+                </div>
+              </div>
+              <p class="service-sub-text">
+                Dịch vụ thiết kế website theo yêu cầu uy tín cùng <b>Lê Thành Long</b> — Bàn giao nhanh, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo.
+              </p>
+
+              <div class="perks-title">Giá trị bạn sẽ nhận được</div>
+              <ul class="perks-list">
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Bàn giao siêu tốc trong <b>2 — 4 ngày</b> làm việc</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Thiết kế chuẩn SEO Google, tối ưu 100% hiển thị di động</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Tích hợp <b>Chatbot AI tư vấn 24/7</b> và Nút Zalo rung lắc</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Tặng kèm chứng chỉ bảo mật SSL HTTPS trọn đời</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Bảo hành kỹ thuật trọn đời & hỗ trợ 1-kèm-1 qua Zalo</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="checkout-col-right">
+            <div>
+              <div class="order-summary-title">Tóm tắt đơn hàng</div>
+              <div class="order-service-name" id="modalSummaryTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+              <div class="order-service-desc">Thiết kế theo yêu cầu cùng Lê Thành Long</div>
+
+              <div class="order-highlight-box">
+                <p id="modalHighlightInfo">
+                  Bàn giao siêu tốc trong <b>2 — 3 ngày</b><br />
+                  Chi phí trọn gói: <b>2.800.000đ</b> (Cọc 50%: <b>1.400.000đ</b>)
+                </p>
+              </div>
+
+              <div class="modal-input-group">
+                <label class="modal-input-label">Số điện thoại / Zalo nhận bàn giao (bắt buộc)</label>
+                <input type="tel" class="modal-input" id="customerPhone" placeholder="Ví dụ: 0325 xxx xxx" required />
+              </div>
+
+              <div class="modal-input-group">
+                <label class="modal-input-label">Họ tên & Lĩnh vực kinh doanh của bạn</label>
+                <input type="text" class="modal-input" id="customerName" placeholder="Ví dụ: Anh Nam - Phòng khám Nha Khoa" />
+              </div>
+
+              <div style="font-size:12px; color:#64748b; margin-top:8px; line-height:1.5;">
+                🎁 Hỗ trợ dựng bản demo xem trước sau 2 giờ làm việc.
+              </div>
+            </div>
+
+            <div>
+              <button class="modal-btn-checkout" onclick="goToStep2()">
+                Tiến hành thanh toán →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: QR CODE SCAN & BANK DETAILS -->
+        <div class="checkout-grid" id="checkoutStep2" style="display:none;">
+          <div class="checkout-col-left qr-step-left">
+            <div>
+              <div class="qr-step-title">Quét QR để thanh toán</div>
+              <p class="qr-step-desc">
+                Sử dụng ứng dụng ngân hàng hoặc ví điện tử hỗ trợ VietQR để quét mã QR và thanh toán nhanh chóng.
+              </p>
+
+              <div class="qr-scanner-frame">
+                <div class="qr-scan-line"></div>
+                <img id="modalQrImage" src="assets/img/qr-techcombank.jpg" alt="Mã QR Chuyển Tiền Techcombank Lê Thành Long" class="qr-scanner-img" />
+              </div>
+
+              <!-- SePay Status Box -->
+              <div class="payment-status-badge waiting" id="paymentStatusBox">
+                <div class="spinner-dot"></div>
+                <span>Đang chờ Techcombank ghi nhận biến động...</span>
+              </div>
+
+              <div class="qr-trust-badges" style="margin-top:16px;">
+                <div class="trust-badge-item">
+                  <span style="color:#2563eb;">⚡</span>
+                  <span>Xác nhận tức thì qua SePay</span>
+                </div>
+                <div class="trust-badge-item">
+                  <span style="color:#16a34a;">🛡️</span>
+                  <span>Bảo mật Techcombank</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-col-right">
+            <div>
+              <div class="bank-transfer-title">Chuyển khoản ngân hàng</div>
+
+              <div class="bank-detail-card">
+                <div style="width:36px; height:36px; border-radius:8px; background:#ea580c; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900;">W</div>
+                <div>
+                  <div style="font-size:13.5px; font-weight:800; color:#0f172a;" id="step2ServiceTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+                  <div style="font-size:12px; color:#64748b;" id="step2DeliveryTime">Bàn giao trong: 2 — 3 ngày | Hỗ trợ 24/7</div>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Ngân hàng</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val">Techcombank</span>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Số tài khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val" id="step2AccNum">1104 2006 01</span>
+                  <button class="bank-copy-icon" onclick="copyText('step2AccNum', this)" title="Sao chép">📋 Sao chép</button>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Tên tài khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val">LE THANH LONG</span>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Nội dung chuyển khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val" style="color:#ea580c;" id="step2Syntax">WEBX113 0325477523</span>
+                  <button class="bank-copy-icon" onclick="copyText('step2Syntax', this)" title="Sao chép">📋 Sao chép</button>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Số tiền đặt cọc (50%)</div>
+                <div class="bank-row-val-wrap" style="background:#eff6ff; border-color:#bfdbfe;">
+                  <span class="bank-row-val" style="color:#1d4ed8; font-size:16px;" id="step2Amount">1.250.000 đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;">
+              <button type="button" id="btnConfirmZalo" class="modal-btn-checkout" onclick="confirmPaymentAndSendEmail()" style="display:block; text-align:center; background:#16a34a; border:none; width:100%; cursor:pointer;">
+                💬 Tôi Đã Chuyển Khoản & Báo Qua Zalo
+              </button>
+              <div id="emailSendNotice" style="display:none; font-size:12px; color:#16a34a; margin-top:8px; text-align:center; font-weight:600;"></div>
+              <button type="button" class="back-to-step1-btn" onclick="goToStep1()">
+                ← Quay lại kiểm tra thông tin
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: PAYMENT SUCCESS SCREEN (SEPAY CONFIRMATION) -->
+        <div class="payment-success-screen" id="checkoutStep3" style="display:none;">
+          <div class="success-icon-wrap">✓</div>
+          <h2 class="success-title">Thanh Toán Đặt Cọc Thành Công!</h2>
+          <p class="success-desc">
+            Tài khoản Techcombank đã ghi nhận giao dịch từ bạn. Thông báo đơn hàng đã được gửi trực tiếp đến email <b>longlesinep114@gmail.com</b> của Lê Thành Long.
+          </p>
+
+          <div class="success-receipt-card">
+            <div class="receipt-row">
+              <span class="receipt-label">Khách hàng:</span>
+              <span class="receipt-value" id="receiptName">Khách hàng</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Số điện thoại / Zalo:</span>
+              <span class="receipt-value" id="receiptPhone">0325 xxx xxx</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Gói dịch vụ:</span>
+              <span class="receipt-value" id="receiptService">Gói Doanh Nghiệp Chuẩn SEO</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Số tiền đã cọc:</span>
+              <span class="receipt-value" style="color:#16a34a; font-size:15px;" id="receiptAmount">1.250.000 đ</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Ngân hàng:</span>
+              <span class="receipt-value">Techcombank (1104 2006 01 - LE THANH LONG)</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Thời gian:</span>
+              <span class="receipt-value" id="receiptTime">Vừa xong</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-primary" style="background:#16a34a; box-shadow:none;">
+              💬 Mở Zalo Trao Đổi Ngay Với Long
+            </a>
+            <button type="button" class="btn btn-ghost" onclick="closeModal()">
+              Hoàn Tất & Đóng Cửa Sổ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

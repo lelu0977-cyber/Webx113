@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webx113 — Thiết Kế Website Theo Yêu Cầu Giá Rẻ, Chuẩn SEO, Bàn Giao 2-4 Ngày</title>
+  <meta name="description" content="Webx113.com — Dịch vụ thiết kế website theo yêu cầu giá rẻ chỉ từ 1.2 — 5 triệu đồng. Hoàn thành siêu tốc 2 - 4 ngày, chuẩn SEO Google, tối ưu di động, tích hợp sẵn Chatbot AI & Zalo chốt đơn tự động." />
+  <meta name="keywords" content="thiết kế website giá rẻ, làm web 1.2 triệu, làm web 2-4 ngày, webx113, thiết kế web chuẩn SEO, chatbot bán hàng, nút zalo website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f97316'/><text y='70' x='15' font-size='60' font-weight='bold' fill='white'>W</text></svg>" />
+  
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR (STICKY GLASS)
+  ============================================================ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-badge">W</div>
+        <div>
+          <span class="nav-logo-text">Webx113</span>
+          <span class="nav-logo-sub">Fast Web Agency</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Trang Chủ</a></li>
+        <li><a href="du-an.html">Dự Án Thực Tế</a></li>
+        <li><a href="bang-gia.html">Bảng Giá</a></li>
+        <li><a href="#about">Về Webx113</a></li>
+        <li><a href="tin-tuc.html">Cẩm Nang Web</a></li>
+        <li><a href="lien-he.html" class="nav-highlight">⚡ Nhận Báo Giá 15 Phút</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="ambient-glow glow-orange" style="width:650px; height:650px; top:-220px; left:-120px;"></div>
+    <div class="ambient-glow glow-teal" style="width:550px; height:550px; top:50px; right:-80px;"></div>
+    
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Left Content -->
+        <div class="fade-up">
+          <div class="pill pill-live">
+            <span class="live-dot"></span> Bàn Giao Thần Tốc · 2 - 4 Ngày
+          </div>
+          <h1 class="hero-title">
+            Thiết Kế Website<br />
+            <span class="accent">Chuẩn SEO & Giá Rẻ</span><br />
+            Theo Mọi Yêu Cầu
+          </h1>
+          <p class="hero-desc">
+            Sở hữu website doanh nghiệp, spa, phòng khám, bán hàng đỉnh cao chỉ từ <b>1.200.000đ</b>. Giao diện Dark & Modern sang trọng, chuẩn SEO Google, tối ưu 100% di động, tích hợp sẵn Chatbot AI & Nút Zalo rung lắc đón khách.
+          </p>
+
+          <ul class="hero-outcomes">
+            <li><span class="check-icon">✓</span> <b>Bàn giao siêu tốc 2 - 4 ngày:</b> Kịp thời triển khai chiến dịch kinh doanh, không trễ hẹn.</li>
+            <li><span class="check-icon">✓</span> <b>Chi phí cực mềm 1.2 — 5 Triệu:</b> Phù hợp cá nhân, hộ kinh doanh, phòng khám và doanh nghiệp vừa & nhỏ.</li>
+            <li><span class="check-icon">✓</span> <b>Chuẩn SEO Onpage 100%:</b> Mã nguồn tối ưu, tốc độ tải trang cực nhanh, index Google dễ dàng.</li>
+            <li><span class="check-icon">✓</span> <b>Đầy đủ công cụ chốt đơn:</b> Tích hợp Chatbot tự động tư vấn 24/7 và Nút Zalo rung lắc tương tác ngay.</li>
+            <li><span class="check-icon">✓</span> <b>Bàn giao toàn quyền & Hướng dẫn:</b> Sở hữu mã nguồn vĩnh viễn, hướng dẫn sử dụng 1-kèm-1 qua Ultraview/Zalo.</li>
+          </ul>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="openModal('Tư vấn thiết kế web siêu tốc')">
+              🚀 Đặt Làm Web Ngay
+            </button>
+            <button class="btn btn-ghost" onclick="highlightRows(['sched-time', 'sched-cost'])">
+              Xem Cam Kết
+            </button>
+            <div class="hero-price-tag">
+              <small>Chi phí trọn gói</small>
+              <strong>1.200.000đ — 5.000.000đ</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content: Schedule & Commitment Card -->
+        <div class="fade-up" id="commitment-card">
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-card-badge">⚡ Cam Kết Thực Chiến</span>
+              <span class="schedule-card-status"><span class="live-dot"></span> Đang Nhận Dự Án</span>
+            </div>
+            <div class="schedule-card-body">
+              <div class="sched-row" id="sched-time">
+                <div class="sched-ico">⏱️</div>
+                <div class="sched-info">
+                  <div class="sched-key">Thời gian hoàn thiện</div>
+                  <div class="sched-val" style="color:var(--orange-2);">2 — 4 Ngày (Bàn giao chạy thực tế)</div>
+                </div>
+              </div>
+
+              <div class="sched-row" id="sched-cost">
+                <div class="sched-ico">💰</div>
+                <div class="sched-info">
+                  <div class="sched-key">Chi phí thiết kế theo yêu cầu</div>
+                  <div class="sched-val" style="color:var(--teal-2);">1.200.000đ — 5.000.000đ trọn gói</div>
+                </div>
+              </div>
+
+              <div class="sched-row">
+                <div class="sched-ico">📱</div>
+                <div class="sched-info">
+                  <div class="sched-key">Công cụ chuyển đổi</div>
+                  <div class="sched-val">Chatbot AI + Nút Zalo Rung Lắc 24/7</div>
+                </div>
+              </div>
+
+              <div class="sched-row">
+                <div class="sched-ico">🔍</div>
+                <div class="sched-info">
+                  <div class="sched-key">Chuẩn hóa công nghệ</div>
+                  <div class="sched-val">Chuẩn SEO Google, Tối ưu Mobile 100%</div>
+                </div>
+              </div>
+
+              <div class="sched-row">
+                <div class="sched-ico">📞</div>
+                <div class="sched-info">
+                  <div class="sched-key">Hotline & Zalo trực tiếp</div>
+                  <div class="sched-val">0325477523 (Lê Thành Long)</div>
+                </div>
+              </div>
+
+              <div style="margin-top:20px;">
+                <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-teal" style="width:100%;">
+                  💬 Nhắn Tin Zalo Tư Vấn Ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       USP STRIP (3 CAM KẾT VÀNG)
+  ============================================================ -->
+  <section class="usp-section">
+    <div class="container">
+      <div class="usp-strip fade-up">
+        <div class="usp-item">
+          <span class="usp-icon">⚡</span>
+          <div class="usp-title">Bàn giao chỉ trong 2 - 4 ngày</div>
+          <div class="usp-desc">Tập trung nguồn lực cao độ, quy trình tinh gọn giúp bạn có ngay website vận hành chỉ sau 48h - 96h, không để bạn bỏ lỡ cơ hội kinh doanh.</div>
+        </div>
+        <div class="usp-item">
+          <span class="usp-icon">💎</span>
+          <div class="usp-title">Giá siêu rẻ từ 1.2 — 5 Triệu đồng</div>
+          <div class="usp-desc">Mức giá tận gốc cực kỳ dễ tiếp cận cho hộ kinh doanh, phòng khám, cá nhân và startup. Cam kết không phát sinh bất kỳ phụ phí vô lý nào.</div>
+        </div>
+        <div class="usp-item">
+          <span class="usp-icon">🤖</span>
+          <div class="usp-title">Tự động chốt đơn với Chatbot & Zalo</div>
+          <div class="usp-desc">Tích hợp sẵn tiện ích Zalo rung lắc và Chatbot trả lời khách hàng 24/7. Khách truy cập web là bấm chat hoặc gọi ngay, nâng tỷ lệ chốt đơn gấp 3 lần.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PORTFOLIO: CÁC DỰ ÁN THỰC TẾ & FEEDBACK KHÁCH HÀNG
+  ============================================================ -->
+  <section class="projects-section" id="projects">
+    <div class="ambient-glow glow-teal" style="width:600px; height:600px; bottom:0; left:-180px;"></div>
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="pill pill-teal">Sản phẩm thực tế đã triển khai</span>
+        <h2 class="section-title">Kho Dự Án Đã Hoàn Thành Của Webx113</h2>
+        <p class="section-sub">100% dự án chạy thực tế trên internet, giao diện sắc nét, tốc độ siêu tốc kèm đánh giá chân thực từ khách hàng.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-tabs fade-up">
+        <button class="filter-btn active" data-filter="all">Tất Cả Dự Án</button>
+        <button class="filter-btn" data-filter="medical">Nha Khoa & Y Tế</button>
+        <button class="filter-btn" data-filter="spa">Spa & Làm Đẹp</button>
+        <button class="filter-btn" data-filter="ebook">Đào Tạo & Ebook</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- PROJECT 1: NHA KHOA THẨM MỸ STAR -->
+        <div class="project-card fade-up" data-cat="medical">
+          <div class="project-thumb-wrap">
+            <span class="project-badge-tag">⭐ Đánh giá 4.9/5.0</span>
+            <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color:#fff; font-size:48px;">
+              🦷
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">Nha Khoa Thẩm Mỹ · Hà Nội</span>
+              <span class="project-price-estimate">Hoàn thành: 3 Ngày</span>
+            </div>
+            <h3 class="project-title">Nha Khoa Thẩm Mỹ Star — 57 Lê Văn Hưu, Hà Nội</h3>
+            <p class="project-desc">Website giới thiệu nha khoa công nghệ cao: Cấy ghép Implant, niềng răng US 5D, bọc răng sứ, nhổ răng khôn không đau. Bố cục y tế cao cấp, form đặt lịch khám thông minh.</p>
+            
+            <button class="expand-btn" onclick="toggleProject(this)">
+              Xem công nghệ & Feedback khách hàng <span class="expand-arrow">▾</span>
+            </button>
+            <div class="expand-content">
+              <div class="expand-label">Công nghệ & Tính năng</div>
+              <ul class="expand-list">
+                <li>Giao diện Glassmorphism chuẩn y khoa châu Âu</li>
+                <li>Tích hợp bản đồ Google Maps & Hotline gọi ngay</li>
+                <li>Form đặt hẹn tự động gửi thông báo</li>
+                <li>Tối ưu 100% trên iPhone, Android, iPad</li>
+              </ul>
+              
+              <div class="expand-label">Đánh giá của Khách hàng</div>
+              <div class="feedback-box">
+                <div class="feedback-header">
+                  <span class="feedback-author">Bác sĩ Nguyễn Văn Cường (Đại diện Star Dental)</span>
+                  <span class="feedback-stars">★★★★★</span>
+                </div>
+                <p class="feedback-text">"Lê Thành Long bàn giao website chỉ sau 3 ngày mà độ hoàn thiện vượt ngoài mong đợi! Giao diện tông xanh trắng y tế chuẩn mực, tốc độ load trang cực nhanh. Từ lúc có web, khách đặt lịch khám qua hotline và Zalo tăng hơn 65%. Rất hài lòng!"</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://lelu0977-cyber.github.io/Satr.vn/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+            <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Nha Khoa Thẩm Mỹ Star')">Chọn Mẫu Này</button>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: NHA KHOA BÁCH KHOA SMILE -->
+        <div class="project-card fade-up" data-cat="medical">
+          <div class="project-thumb-wrap">
+            <span class="project-badge-tag">⭐ Đánh giá 5.0/5.0</span>
+            <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0d9488 0%, #115e59 100%); color:#fff; font-size:48px;">
+              🏥
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">Nha Khoa Công Nghệ Cao · Phú Thọ</span>
+              <span class="project-price-estimate">Hoàn thành: 2 Ngày</span>
+            </div>
+            <h3 class="project-title">Nha Khoa Bách Khoa Smile — 16 Lạc Long Quân</h3>
+            <p class="project-desc">Website giới thiệu hệ thống nha khoa uy tín chuẩn Đức. Đầy đủ trang thiết bị vô trùng, danh mục bác sĩ chuyên khoa, bảng giá dịch vụ minh bạch và đánh giá 5.0 sao Google.</p>
+            
+            <button class="expand-btn" onclick="toggleProject(this)">
+              Xem công nghệ & Feedback khách hàng <span class="expand-arrow">▾</span>
+            </button>
+            <div class="expand-content">
+              <div class="expand-label">Công nghệ & Tính năng</div>
+              <ul class="expand-list">
+                <li>Bảng dịch vụ chi tiết kèm hình ảnh minh họa sinh động</li>
+                <li>Menu đa cấp: Cơ sở vật chất, đội ngũ bác sĩ, bảng giá</li>
+                <li>Nút gọi điện thoại & Zalo cố định hỗ trợ khẩn cấp</li>
+                <li>Tốc độ load trang dưới 1.2s</li>
+              </ul>
+              
+              <div class="expand-label">Đánh giá của Khách hàng</div>
+              <div class="feedback-box">
+                <div class="feedback-header">
+                  <span class="feedback-author">Bác sĩ Hoàng Tuấn Anh (Nha Khoa Smile)</span>
+                  <span class="feedback-stars">★★★★★</span>
+                </div>
+                <p class="feedback-text">"Webx113 làm việc siêu tốc và rất có trách nhiệm. Mình cần gấp website để kịp lễ khai trương cơ sở, Long hoàn thành chỉ đúng 2 ngày với đầy đủ nội dung bài bản. Khách đến phòng khám đều khen web chuyên nghiệp!"</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://lelu0977-cyber.github.io/Smile.vn/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+            <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Nha Khoa Bách Khoa Smile')">Chọn Mẫu Này</button>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: BE WELLNESS SPA -->
+        <div class="project-card fade-up" data-cat="spa">
+          <div class="project-thumb-wrap">
+            <span class="project-badge-tag">⭐ Đánh giá 4.8/5.0</span>
+            <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1e3a2f 0%, #245943 100%); color:#d4af37; font-size:48px;">
+              🌿
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">Spa & Trị Liệu Dưỡng Sinh · Hoàn Kiếm</span>
+              <span class="project-price-estimate">Hoàn thành: 3 Ngày</span>
+            </div>
+            <h3 class="project-title">Be Wellness Spa — 10 Nguyễn Quang Bích, Hà Nội</h3>
+            <p class="project-desc">Website không gian spa nghỉ dưỡng sang trọng thuộc Bespoke Hotels Hanoi. Trải nghiệm mát xa trị liệu, gội đầu dưỡng sinh, kết hợp thảo mộc thiên nhiên Á Đông thanh lịch.</p>
+            
+            <button class="expand-btn" onclick="toggleProject(this)">
+              Xem công nghệ & Feedback khách hàng <span class="expand-arrow">▾</span>
+            </button>
+            <div class="expand-content">
+              <div class="expand-label">Công nghệ & Tính năng</div>
+              <ul class="expand-list">
+                <li>Tone màu xanh lục & vàng kim quyền quý, chuẩn gu nghỉ dưỡng</li>
+                <li>Hiệu ứng cuộn mượt mà, layout tối giản sang trọng</li>
+                <li>Bộ lọc menu trị liệu & bảng giá dịch vụ cao cấp</li>
+                <li>Hỗ trợ song ngữ & form đặt lịch trị liệu</li>
+              </ul>
+              
+              <div class="expand-label">Đánh giá của Khách hàng</div>
+              <div class="feedback-box">
+                <div class="feedback-header">
+                  <span class="feedback-author">Chị Trần Mai Linh (Quản lý Be Wellness Spa)</span>
+                  <span class="feedback-stars">★★★★★</span>
+                </div>
+                <p class="feedback-text">"Giao diện spa toát lên đúng chất mộc và sự thư thái mà bên mình hướng tới. Nút đặt lịch và liên hệ Zalo rất thuận tiện cho cả khách du lịch quốc tế lẫn khách trong nước. Cảm ơn sự tận tụy của Long!"</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://longlesinep114-web.github.io/Wellness-sapa/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+            <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Be Wellness Spa')">Chọn Mẫu Này</button>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: EBOOK NGHỆ THUẬT GIAO TIẾP ỨNG XỬ -->
+        <div class="project-card fade-up" data-cat="ebook">
+          <div class="project-thumb-wrap">
+            <span class="project-badge-tag">⭐ Đánh giá 5.0/5.0</span>
+            <div style="height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0b1d26 0%, #0e242f 100%); color:#fbd784; font-size:48px;">
+              📖
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category">Đào Tạo & Landing Page Bán Sách</span>
+              <span class="project-price-estimate">Hoàn thành: 2 Ngày</span>
+            </div>
+            <h3 class="project-title">Ebook: Nghệ Thuật Giao Tiếp Khéo Léo & Ứng Xử</h3>
+            <p class="project-desc">Landing Page chuyển đổi cao giới thiệu ấn bản sách điện tử 2026. Thiết kế phong cách Dark Pine cao cấp chuẩn MNTN, cấu trúc chia chương học, đọc thử và đặt mua tự động.</p>
+            
+            <button class="expand-btn" onclick="toggleProject(this)">
+              Xem công nghệ & Feedback khách hàng <span class="expand-arrow">▾</span>
+            </button>
+            <div class="expand-content">
+              <div class="expand-label">Công nghệ & Tính năng</div>
+              <ul class="expand-list">
+                <li>Phong cách Typography Playfair Display quý phái kết hợp Sans hiện đại</li>
+                <li>Tỷ lệ chuyển đổi CRO cao: Form đặt sách và mã QR quét nhận sách</li>
+                <li>Module tóm tắt mục lục và quà tặng kèm khoá học</li>
+                <li>Tốc độ tải cực nhẹ, tối ưu SEO Landing Page</li>
+              </ul>
+              
+              <div class="expand-label">Đánh giá của Khách hàng</div>
+              <div class="feedback-box">
+                <div class="feedback-header">
+                  <span class="feedback-author">Tác giả & Diễn giả Phạm Minh Đức</span>
+                  <span class="feedback-stars">★★★★★</span>
+                </div>
+                <p class="feedback-text">"Landing page bán sách tuyệt đẹp! Tông màu trầm sang trọng đúng gu giới tri thức, bố cục mạch lạc giúp giữ chân độc giả rất lâu. Lượng đơn đặt mua Ebook tăng vọt ngay tuần đầu tiên ra mắt!"</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://longlesinep114-web.github.io/giao-ti-p-ng-x-/" target="_blank" rel="noopener" class="btn btn-teal btn-sm">Xem Web Trực Tiếp ↗</a>
+            <button class="btn btn-ghost btn-sm" onclick="openModal('Mẫu Landing Page Ebook')">Chọn Mẫu Này</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:40px;" class="fade-up">
+        <a href="du-an.html" class="btn btn-ghost btn-lg">Xem Toàn Bộ 15+ Mẫu Web Khác →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING: 3 GÓI DỊCH VỤ MINH BẠCH (1.2 — 5 TRIỆU)
+  ============================================================ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="pill pill-orange">Bảng Giá Dễ Tiếp Cận</span>
+        <h2 class="section-title">Chi Phí Trọn Gói 1.2 — 5 Triệu Đồng</h2>
+        <p class="section-sub">Không phí phát sinh ẩn. Đầy đủ mã nguồn, bảo hành trọn đời và hỗ trợ 24/7.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- PLAN 1 -->
+        <div class="pricing-card fade-up">
+          <div class="plan-name">Gói Khởi Nghiệp</div>
+          <p class="plan-desc">Dành cho cá nhân, landing page giới thiệu 1 sản phẩm/dịch vụ đơn lẻ hoặc bán Ebook.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price">1.200.000<span class="currency">VND</span></div>
+            <div class="plan-time">⏱️ Hoàn thành: 2 ngày</div>
+          </div>
+          <ul class="plan-features">
+            <li class="checked strong-item">1 Landing Page chuyển đổi cao (CRO)</li>
+            <li class="checked">Chuẩn SEO Onpage cơ bản, tốc độ tải nhanh</li>
+            <li class="checked">Tương thích 100% mọi màn hình điện thoại</li>
+            <li class="checked">Tích hợp Nút Zalo Rung Lắc & Gọi Điện</li>
+            <li class="checked">Form thu thập thông tin khách hàng tiềm năng</li>
+            <li class="checked">Bảo hành & sửa lỗi 6 tháng</li>
+          </ul>
+          <button class="btn btn-ghost" onclick="openModal('Gói Khởi Nghiệp 1.200.000đ')">Đăng Ký Gói Này</button>
+        </div>
+
+        <!-- PLAN 2 (FEATURED) -->
+        <div class="pricing-card featured fade-up">
+          <div class="featured-badge">🔥 Được Chọn Nhiều Nhất</div>
+          <div class="plan-name" style="color:var(--orange-2);">Gói Doanh Nghiệp Chuẩn SEO</div>
+          <p class="plan-desc">Dành cho phòng khám nha khoa, spa, công ty xây dựng, dịch vụ cần web đa trang bài bản.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price" style="color:var(--orange-2);">2.800.000<span class="currency">VND</span></div>
+            <div class="plan-time">⏱️ Hoàn thành: 2 — 3 ngày</div>
+          </div>
+          <ul class="plan-features">
+            <li class="checked strong-item">Website đa trang (Trang chủ, Giới thiệu, Dịch vụ, Tin tức, Liên hệ)</li>
+            <li class="checked strong-item">Chuẩn SEO Google nâng cao, tối ưu Semantic & Rich Snippets</li>
+            <li class="checked">Tích hợp Chatbot AI tư vấn cơ bản 24/7</li>
+            <li class="checked">Nút Zalo rung lắc & Danh thiếp quét QR</li>
+            <li class="checked">Tích hợp Google Maps chỉ đường</li>
+            <li class="checked">Tặng chứng chỉ bảo mật SSL miễn phí trọn đời</li>
+            <li class="checked">Bảo hành kỹ thuật trọn đời & hỗ trợ 24/7</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('Gói Doanh Nghiệp 2.800.000đ')">Đăng Ký Ngay</button>
+        </div>
+
+        <!-- PLAN 3 -->
+        <div class="pricing-card fade-up">
+          <div class="plan-name">Gói Bán Hàng E-Commerce / Cao Cấp</div>
+          <p class="plan-desc">Dành cho shop kinh doanh thời trang, mỹ phẩm, đồ gia dụng cần danh mục sản phẩm và giỏ hàng.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price">5.000.000<span class="currency">VND</span></div>
+            <div class="plan-time">⏱️ Hoàn thành: 3 — 4 ngày</div>
+          </div>
+          <ul class="plan-features">
+            <li class="checked strong-item">Website bán hàng đầy đủ tính năng giỏ hàng & checkout</li>
+            <li class="checked strong-item">Quản lý không giới hạn sản phẩm & danh mục</li>
+            <li class="checked">Tích hợp Chatbot AI trả lời tự động chuyên sâu chốt sale</li>
+            <li class="checked">Tích hợp thanh toán SePay VietQR tự động kích hoạt đơn</li>
+            <li class="checked">Tối ưu chuẩn SEO Master cho từng chi tiết sản phẩm</li>
+            <li class="checked">Trang quản trị cực dễ thêm/xóa/sửa sản phẩm</li>
+            <li class="checked">Hỗ trợ nhập liệu 25 — 30 sản phẩm đầu tiên</li>
+            <li class="checked">Bảo hành kỹ thuật trọn đời 24/7 & Hỗ trợ chạy ads</li>
+          </ul>
+          <button class="btn btn-ghost" onclick="openModal('Gói Bán Hàng 5.000.000đ')">Đăng Ký Gói Này</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT FOUNDER: LÊ THÀNH LONG / WEBX113
+  ============================================================ -->
+  <section class="about-section" id="about">
+    <div class="ambient-glow glow-orange" style="width:500px; height:500px; top:10%; right:-100px;"></div>
+    <div class="container">
+      <div class="about-inner">
+        <!-- Photo Wrap with Real Zalo Avatar -->
+        <div class="about-photo-wrap fade-up">
+          <img src="assets/img/qr-zalo.jpg" alt="Lê Thành Long - Sáng Lập Webx113" class="about-photo" />
+        </div>
+
+        <!-- Bio Content -->
+        <div class="fade-up">
+          <span class="pill pill-orange">Người sáng lập</span>
+          <h2 class="about-name">Lê Thành Long</h2>
+          <div class="about-role">Chuyên Gia Thiết Kế Website & Giải Pháp Chuyển Đổi Số · Webx113.com</div>
+          <p class="about-bio">
+            Chào bạn, tôi là <strong>Lê Thành Long</strong>. Với triết lý <em>"Website không chỉ để trưng bày — Website phải giúp khách hàng mang về doanh thu thực tế"</em>, tôi thành lập <strong>Webx113.com</strong> nhằm phá vỡ rào cản về giá và thời gian của các đơn vị làm web truyền thống.
+            <br /><br />
+            Tôi cam kết hoàn thiện cho bạn một website đẹp, chuẩn SEO, tải nhanh và có sẵn hệ thống chốt khách tự động (Chatbot AI, Zalo) chỉ trong vòng <strong>2 đến 4 ngày</strong> với chi phí hạt dẻ từ <strong>1.2 đến 5 triệu đồng</strong>. Mọi sản phẩm bàn giao đều được tôi trực tiếp nghiệm thu và bảo hành dài lâu.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Hài Lòng</span>
+            </div>
+            <div class="stat-item">
+              <strong>2 — 4 Ngày</strong>
+              <span>Bàn Giao Siêu Tốc</span>
+            </div>
+            <div class="stat-item">
+              <strong>24/7</strong>
+              <span>Hỗ Trợ Kỹ Thuật</span>
+            </div>
+          </div>
+
+          <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-teal">
+              💬 Kết Bạn Zalo: 0325477523
+            </a>
+            <a href="tel:0325477523" class="btn btn-ghost">
+              📞 Gọi Điện Ngay
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REGISTRATION & PAYMENT PANEL (TECHCOMBANK QR CHÍNH CHỦ)
+  ============================================================ -->
+  <section class="register-section" id="register">
+    <div class="container">
+      <div class="register-inner">
+        <!-- Left Steps -->
+        <div class="fade-up">
+          <span class="pill pill-teal">Quy trình làm việc minh bạch</span>
+          <h2 class="section-title">Chỉ 3 Bước Để Có Website Hoàn Hảo</h2>
+          
+          <div class="steps-list">
+            <div class="step-item">
+              <div class="step-circle">1</div>
+              <div class="step-content">
+                <strong>Chọn Gói Dịch Vụ & Gửi Yêu Cầu</strong>
+                <p>Chọn gói 1.2Tr, 2.8Tr hoặc 5Tr và cung cấp thông tin ngành nghề qua Zalo <code>0325477523</code>. Long sẽ lên khung giao diện mẫu cho bạn duyệt trong 2 giờ.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-circle">2</div>
+              <div class="step-content">
+                <strong>Đặt Cọc Khởi Động Dự Án (50%)</strong>
+                <p>Quét mã QR Techcombank bên cạnh để đặt cọc 50%. Nội dung chuyển khoản ghi: <code>[Tên bạn] + [SĐT] làm web</code>.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-circle">3</div>
+              <div class="step-content">
+                <strong>Duyệt Web Demo & Bàn Giao Trong 2 - 4 Ngày</strong>
+                <p>Sau 2 - 4 ngày, bạn kiểm tra bản web chạy thực tế, yêu cầu chỉnh sửa theo ý muốn cho đến khi 100% ưng ý, sau đó thanh toán phần còn lại và nhận quyền quản trị.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="note-card">
+            <strong>📌 Cam kết vàng từ Lê Thành Long:</strong><br />
+            Nếu website bàn giao không đúng với yêu cầu đã thỏa thuận ban đầu hoặc chậm tiến độ cam kết mà không có lý do chính đáng, Webx113 cam kết <strong>hoàn tiền đặt cọc 100%</strong> ngay trong ngày!
+          </div>
+        </div>
+
+        <!-- Right Payment Card with Real Techcombank QR -->
+        <div class="fade-up">
+          <div class="payment-panel">
+            <div class="payment-panel-header">
+              <h3>💳 Thông Tin Thanh Toán Cọc</h3>
+              <span class="pill pill-orange" style="margin:0; font-size:10px;">Techcombank 24/7</span>
+            </div>
+            <div class="payment-panel-body">
+              <div class="qr-display-box">
+                <img src="assets/img/qr-techcombank.jpg" alt="Mã QR Chuyển Khoản Techcombank Lê Thành Long" class="qr-image" />
+                <div style="font-size:12px; color:#475569; margin-top:8px; font-weight:600;">
+                  Quét mã trên ứng dụng ngân hàng để chuyển khoản nhanh
+                </div>
+              </div>
+
+              <div class="bank-detail-box">
+                <div class="bank-row">
+                  <span class="bank-label">Ngân hàng:</span>
+                  <span class="bank-value" style="font-family:inherit;">Techcombank</span>
+                </div>
+                <div class="bank-row">
+                  <span class="bank-label">Số tài khoản:</span>
+                  <div class="bank-value">
+                    <span>1104 2006 01</span>
+                    <button class="copy-btn" id="copyBtn" onclick="copyBankAccount('1104200601')">Sao chép</button>
+                  </div>
+                </div>
+                <div class="bank-row">
+                  <span class="bank-label">Chủ tài khoản:</span>
+                  <span class="bank-value" style="font-family:inherit;">LE THANH LONG</span>
+                </div>
+                <div class="bank-row">
+                  <span class="bank-label">Cú pháp:</span>
+                  <span class="bank-value" style="font-size:13px; color:var(--orange-2);">[Tên] + [SĐT] lam web</span>
+                </div>
+              </div>
+
+              <div style="text-align:center; margin-top:10px;">
+                <small style="color:var(--text-3); font-size:12px;">Hotline hỗ trợ xác nhận cọc tức thì: <b>0325477523</b></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ SECTION (ACCORDION)
+  ============================================================ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="section-header fade-up">
+          <span class="pill pill-teal">Giải đáp thắc mắc</span>
+          <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+        </div>
+
+        <div class="faq-list fade-up">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Tại sao giá thiết kế website tại Webx113 lại rẻ (chỉ 1.2 — 5 triệu)?
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              Webx113 tối ưu hóa quy trình làm việc bằng các bộ khung mã nguồn hiện đại đã được kiểm chứng chuẩn SEO và công nghệ AI hỗ trợ viết nội dung, loại bỏ chi phí mặt bằng và bộ máy cồng kềnh của các agency truyền thống. Nhờ đó, bạn được nhận website chất lượng cao nhất với mức giá tiết kiệm tối đa.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Thời gian làm web 2 - 4 ngày có đảm bảo chất lượng không?
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              Chắc chắn đảm bảo 100%. Long tập trung làm việc 1-kèm-1 theo từng dự án, không nhận dồn dập nhiều web để bỏ dở. Sau 2-4 ngày, bạn sẽ nhận được bản demo chạy thật trên internet để kiểm tra từng trang, từng nút bấm trước khi thanh toán hoàn tất.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Website có thực sự chuẩn SEO để lên Google không?
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              Toàn bộ website do Webx113 bàn giao đều được cấu trúc chuẩn thẻ H1, H2, H3, thẻ Meta Title, Meta Description, tối ưu hình ảnh dung lượng nhẹ, thân thiện với thuật toán tìm kiếm của Google và có tốc độ tải trang cực nhanh (điểm Google PageSpeed xanh).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Sau khi bàn giao, tôi có tự quản trị và sửa nội dung được không?
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              Có. Long sẽ quay video hướng dẫn chi tiết hoặc gọi Ultraview/Zalo 1-kèm-1 để bạn có thể tự thay đổi số điện thoại, đổi hình ảnh, cập nhật bài viết mới một cách dễ dàng mà không cần phải biết code.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Chính sách bảo hành và hỗ trợ sau khi làm xong như thế nào?
+              <span class="faq-ico">+</span>
+            </button>
+            <div class="faq-a">
+              Webx113 bảo hành kỹ thuật trọn đời cho toàn bộ lỗi phát sinh. Bất cứ khi nào website gặp sự cố hoặc bạn cần hỗ trợ thay đổi thông tin cơ bản, Long sẽ hỗ trợ xử lý ngay qua Zalo <b>0325477523</b> trong vòng vài tiếng.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Webx113.com</div>
+          <p class="footer-desc">
+            Dịch vụ thiết kế website theo yêu cầu uy tín hàng đầu. Siêu tốc 2 - 4 ngày, chi phí 1.2 — 5 triệu đồng, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo chốt khách tự động.
+          </p>
+          <div style="font-size:13px; color:var(--text-2);">
+            Đại diện: <b>Lê Thành Long</b>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Liên Kết Nhanh</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="du-an.html">Kho Dự Án Thực Tế</a></li>
+            <li><a href="bang-gia.html">Bảng Giá Chi Tiết</a></li>
+            <li><a href="tin-tuc.html">Cẩm Nang Làm Web</a></li>
+            <li><a href="lien-he.html">Liên Hệ & Đặt Cọc</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Thông Tin Liên Hệ</div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <a href="tel:0325477523">Hotline: 0325477523</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>💬</span>
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener">Zalo: 0325477523 (Lê Thành Long)</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>🌐</span>
+            <span>Tên miền: Webx113.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>💳</span>
+            <span>Techcombank: 1104 2006 01</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Webx113.com. Bản quyền thuộc về Lê Thành Long. Mọi quyền được bảo lưu.</div>
+        <div>Thiết kế với phong cách Dark Modern UI công nghệ cao.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       STICKY FLOATING BUTTONS (ZALO, HOTLINE & AI CHAT)
+  ============================================================ -->
+  <div class="floating-actions">
+    <!-- Chatbot Button -->
+    <button class="float-btn btn-float-chat" onclick="toggleChatbot()" title="Tư vấn với AI Chatbot">
+      🤖
+      <span class="badge-unread" id="chatBadge">1</span>
+    </button>
+
+    <!-- Zalo Button -->
+    <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="float-btn btn-float-zalo" title="Chat Zalo ngay">
+      <svg viewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24c0 4.14 1.27 8.01 3.44 11.23L5 43l8.03-2.39C16.14 42.71 19.95 44 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm8.7 26.23c-.38.98-2.22 1.88-3.07 1.99-.81.1-1.85.15-3.01-.23-1.63-.53-4.08-1.74-6.44-4.1-3.03-3.03-4.48-6.17-4.88-7.92-.35-1.52.26-2.58.75-3.07.49-.49 1.13-.7 1.63-.7.5 0 .86.03 1.23.07.39.05.86-.16 1.34 1.01.5 1.23 1.73 4.22 1.88 4.53.15.31.25.68.04 1.1-.21.41-.32.67-.63 1.04-.32.36-.66.8-.94 1.07-.32.32-.65.66-.28 1.3.37.64 1.65 2.73 3.55 4.42 2.44 2.18 4.49 2.85 5.13 3.17.64.32 1.01.27 1.39-.16.38-.44 1.63-1.9 2.06-2.55.44-.66.87-.55 1.48-.32.6.22 3.86 1.82 4.52 2.15.66.33 1.1.5 1.26.77.16.27.16 1.57-.22 2.55z"/></svg>
+    </a>
+
+    <!-- Hotline Button -->
+    <a href="tel:0325477523" class="float-btn btn-float-hotline" title="Gọi Hotline: 0325477523">
+      📞
+    </a>
+  </div>
+
+  <!-- ============================================================
+       INTERACTIVE AI CHATBOT WIDGET
+  ============================================================ -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-name">Trợ Lý AI Webx113</div>
+          <div class="chat-status"><span class="live-dot" style="width:6px;height:6px;"></span> Sẵn sàng tư vấn 24/7</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChatbot()">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg msg-bot">
+        Xin chào bạn! Tôi là Trợ Lý Tự Động của <b>Webx113.com</b>. Bạn đang quan tâm gói thiết kế website nào (1.2Tr - 2.8Tr - 5Tr)? Tôi có thể giúp gì cho bạn ngay lúc này?
+        <div class="chat-quick-replies">
+          <button class="quick-btn" onclick="askChatbot('Báo giá chi tiết các gói')">💰 Báo giá chi tiết</button>
+          <button class="quick-btn" onclick="askChatbot('Làm web mất mấy ngày?')">⏱️ Thời gian hoàn thành</button>
+          <button class="quick-btn" onclick="askChatbot('Có chuẩn SEO Google không?')">🔍 Chuẩn SEO Google?</button>
+          <button class="quick-btn" onclick="askChatbot('Cho tôi số Zalo tư vấn')">📱 Số Zalo tư vấn</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Nhập câu hỏi của bạn..." />
+      <button class="chat-send-btn" id="chatSendBtn" title="Gửi tin nhắn">➤</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HIGH FIDELITY 2-STEP MODAL (MATCHING SCREENSHOT)
+  ============================================================ -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal-box">
+      <!-- Modal Dark Header -->
+      <div class="modal-header">
+        <h3>Đăng ký thiết kế website</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Đóng">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- STEP 1: SERVICE DETAILS & CUSTOMER INFO -->
+        <div class="checkout-grid" id="checkoutStep1">
+          <!-- Left Column -->
+          <div class="checkout-col-left">
+            <div>
+              <div class="service-header-card">
+                <div class="service-thumb">🌐</div>
+                <div>
+                  <div class="service-title-text" id="modalServiceTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+                  <div style="font-size:12px; color:#2563eb; font-weight:700;">Webx113.com · Bàn giao 2 - 4 ngày</div>
+                </div>
+              </div>
+              <p class="service-sub-text">
+                Dịch vụ thiết kế website theo yêu cầu uy tín cùng <b>Lê Thành Long</b> — Bàn giao nhanh, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo.
+              </p>
+
+              <div class="perks-title">Giá trị bạn sẽ nhận được</div>
+              <ul class="perks-list">
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Bàn giao siêu tốc trong <b>2 — 4 ngày</b> làm việc</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Thiết kế chuẩn SEO Google, tối ưu 100% hiển thị di động</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Tích hợp <b>Chatbot AI tư vấn 24/7</b> và Nút Zalo rung lắc</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Tặng kèm chứng chỉ bảo mật SSL HTTPS trọn đời</span>
+                </li>
+                <li class="perk-item">
+                  <span class="perk-check">✓</span>
+                  <span>Bảo hành kỹ thuật trọn đời & hỗ trợ 1-kèm-1 qua Zalo</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="checkout-col-right">
+            <div>
+              <div class="order-summary-title">Tóm tắt đơn hàng</div>
+              <div class="order-service-name" id="modalSummaryTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+              <div class="order-service-desc">Thiết kế theo yêu cầu cùng Lê Thành Long</div>
+
+              <div class="order-highlight-box">
+                <p id="modalHighlightInfo">
+                  Bàn giao siêu tốc trong <b>2 — 3 ngày</b><br />
+                  Chi phí trọn gói: <b>2.800.000đ</b> (Cọc 50%: <b>1.400.000đ</b>)
+                </p>
+              </div>
+
+              <div class="modal-input-group">
+                <label class="modal-input-label">Số điện thoại / Zalo nhận bàn giao (bắt buộc)</label>
+                <input type="tel" class="modal-input" id="customerPhone" placeholder="Ví dụ: 0325 xxx xxx" required />
+              </div>
+
+              <div class="modal-input-group">
+                <label class="modal-input-label">Họ tên & Lĩnh vực kinh doanh của bạn</label>
+                <input type="text" class="modal-input" id="customerName" placeholder="Ví dụ: Anh Nam - Phòng khám Nha Khoa" />
+              </div>
+
+              <div style="font-size:12px; color:#64748b; margin-top:8px; line-height:1.5;">
+                🎁 Hỗ trợ dựng bản demo xem trước sau 2 giờ làm việc.
+              </div>
+            </div>
+
+            <div>
+              <button class="modal-btn-checkout" onclick="goToStep2()">
+                Tiến hành thanh toán →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: QR CODE SCAN & BANK DETAILS -->
+        <div class="checkout-grid" id="checkoutStep2" style="display:none;">
+          <!-- Left Column: QR Scan -->
+          <div class="checkout-col-left qr-step-left">
+            <div>
+              <div class="qr-step-title">Quét QR để thanh toán</div>
+              <p class="qr-step-desc">
+                Sử dụng ứng dụng ngân hàng hoặc ví điện tử hỗ trợ VietQR để quét mã QR và thanh toán nhanh chóng.
+              </p>
+
+              <div class="qr-scanner-frame">
+                <div class="qr-scan-line"></div>
+                <img id="modalQrImage" src="assets/img/qr-techcombank.jpg" alt="Mã QR Chuyển Tiền Techcombank Lê Thành Long" class="qr-scanner-img" />
+              </div>
+
+              <!-- SePay Status Box -->
+              <div class="payment-status-badge waiting" id="paymentStatusBox">
+                <div class="spinner-dot"></div>
+                <span>Đang chờ Techcombank ghi nhận biến động...</span>
+              </div>
+
+              <div class="qr-trust-badges" style="margin-top:16px;">
+                <div class="trust-badge-item">
+                  <span style="color:#2563eb;">⚡</span>
+                  <span>Xác nhận tức thì qua SePay</span>
+                </div>
+                <div class="trust-badge-item">
+                  <span style="color:#16a34a;">🛡️</span>
+                  <span>Bảo mật Techcombank</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Bank Details -->
+          <div class="checkout-col-right">
+            <div>
+              <div class="bank-transfer-title">Chuyển khoản ngân hàng</div>
+
+              <div class="bank-detail-card">
+                <div style="width:36px; height:36px; border-radius:8px; background:#ea580c; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900;">W</div>
+                <div>
+                  <div style="font-size:13.5px; font-weight:800; color:#0f172a;" id="step2ServiceTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
+                  <div style="font-size:12px; color:#64748b;" id="step2DeliveryTime">Bàn giao trong: 2 — 3 ngày | Hỗ trợ 24/7</div>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Ngân hàng</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val">Techcombank</span>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Số tài khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val" id="step2AccNum">1104 2006 01</span>
+                  <button class="bank-copy-icon" onclick="copyText('step2AccNum', this)" title="Sao chép">📋 Sao chép</button>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Tên tài khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val">LE THANH LONG</span>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Nội dung chuyển khoản</div>
+                <div class="bank-row-val-wrap">
+                  <span class="bank-row-val" style="color:#ea580c;" id="step2Syntax">WEBX113 0325477523</span>
+                  <button class="bank-copy-icon" onclick="copyText('step2Syntax', this)" title="Sao chép">📋 Sao chép</button>
+                </div>
+              </div>
+
+              <div class="bank-row-item">
+                <div class="bank-row-label">Số tiền đặt cọc (50%)</div>
+                <div class="bank-row-val-wrap" style="background:#eff6ff; border-color:#bfdbfe;">
+                  <span class="bank-row-val" style="color:#1d4ed8; font-size:16px;" id="step2Amount">1.250.000 đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;">
+              <button type="button" id="btnConfirmZalo" class="modal-btn-checkout" onclick="confirmPaymentAndSendEmail()" style="display:block; text-align:center; background:#16a34a; border:none; width:100%; cursor:pointer;">
+                💬 Tôi Đã Chuyển Khoản & Báo Qua Zalo
+              </button>
+              <div id="emailSendNotice" style="display:none; font-size:12px; color:#16a34a; margin-top:8px; text-align:center; font-weight:600;"></div>
+              <button type="button" class="back-to-step1-btn" onclick="goToStep1()">
+                ← Quay lại kiểm tra thông tin
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: PAYMENT SUCCESS SCREEN (SEPAY CONFIRMATION) -->
+        <div class="payment-success-screen" id="checkoutStep3" style="display:none;">
+          <div class="success-icon-wrap">✓</div>
+          <h2 class="success-title">Thanh Toán Đặt Cọc Thành Công!</h2>
+          <p class="success-desc">
+            Tài khoản Techcombank đã ghi nhận giao dịch từ bạn. Thông báo đơn hàng đã được gửi trực tiếp đến email <b>longlesinep114@gmail.com</b> của Lê Thành Long.
+          </p>
+
+          <div class="success-receipt-card">
+            <div class="receipt-row">
+              <span class="receipt-label">Khách hàng:</span>
+              <span class="receipt-value" id="receiptName">Khách hàng</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Số điện thoại / Zalo:</span>
+              <span class="receipt-value" id="receiptPhone">0325 xxx xxx</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Gói dịch vụ:</span>
+              <span class="receipt-value" id="receiptService">Gói Doanh Nghiệp Chuẩn SEO</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Số tiền đã cọc:</span>
+              <span class="receipt-value" style="color:#16a34a; font-size:15px;" id="receiptAmount">1.250.000 đ</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Ngân hàng:</span>
+              <span class="receipt-value">Techcombank (1104 2006 01 - LE THANH LONG)</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Thời gian:</span>
+              <span class="receipt-value" id="receiptTime">Vừa xong</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-primary" style="background:#16a34a; box-shadow:none;">
+              💬 Mở Zalo Trao Đổi Ngay Với Long
+            </a>
+            <button type="button" class="btn btn-ghost" onclick="closeModal()">
+              Hoàn Tất & Đóng Cửa Sổ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên Hệ & Đặt Cọc Website — Webx113.com</title>
+  <meta name="description" content="Liên hệ trực tiếp với Lê Thành Long - Hotline/Zalo: 0325477523. Báo giá nhanh trong 15 phút, tư vấn gói làm website 1.2 — 5 triệu, bàn giao siêu tốc 2-4 ngày." />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f97316'/><text y='70' x='15' font-size='60' font-weight='bold' fill='white'>W</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-badge">W</div>
+        <div>
+          <span class="nav-logo-text">Webx113</span>
+          <span class="nav-logo-sub">Fast Web Agency</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="du-an.html">Dự Án Thực Tế</a></li>
+        <li><a href="bang-gia.html">Bảng Giá</a></li>
+        <li><a href="index.html#about">Về Webx113</a></li>
+        <li><a href="tin-tuc.html">Cẩm Nang Web</a></li>
+        <li><a href="lien-he.html" class="active nav-highlight">⚡ Nhận Báo Giá 15 Phút</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <header style="padding: 60px 0 30px; text-align: center; position: relative;">
+    <div class="ambient-glow glow-orange" style="width:500px; height:500px; top:-120px; left:50%; transform:translateX(-50%);"></div>
+    <div class="container">
+      <div class="pill pill-orange">Hỗ Trợ 24/7</div>
+      <h1 class="section-title">Liên Hệ & Khởi Động Dự Án Ngay</h1>
+      <p class="section-sub">
+        Lê Thành Long luôn sẵn sàng lắng nghe ý tưởng của bạn. Phản hồi và tư vấn demo chỉ trong vòng 15 phút!
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT GRID -->
+  <main class="container" style="padding-bottom: 100px;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+      
+      <!-- LEFT: CONTACT & ESTIMATOR FORM -->
+      <div style="background:var(--bg-2); border:1px solid var(--border-md); border-radius:var(--radius-xl); padding:36px 30px; box-shadow:var(--shadow-card);">
+        <h2 style="font-size:22px; font-weight:800; color:var(--text-1); margin-bottom:8px;">Gửi Yêu Cầu Thiết Kế Web</h2>
+        <p style="font-size:13.5px; color:var(--text-2); margin-bottom:24px;">Điền thông tin bên dưới hoặc nhắn tin trực tiếp qua Zalo để Long gọi lại hỗ trợ ngay.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Lê Thành Long đã nhận được yêu cầu và sẽ liên hệ trong 15 phút.');">
+          <div class="form-group">
+            <label class="form-label">Họ và tên của bạn:</label>
+            <input type="text" class="form-control" placeholder="Ví dụ: Anh Nam, Chị Hương..." required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Số điện thoại / Zalo:</label>
+            <input type="tel" class="form-control" placeholder="0325 xxx xxx" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gói bạn dự định làm:</label>
+            <select class="form-control">
+              <option value="1.2tr">Gói Khởi Nghiệp (1.200.000đ) - Bàn giao 2 ngày</option>
+              <option value="2.8tr" selected>Gói Doanh Nghiệp Chuẩn SEO (2.800.000đ) - Bàn giao 2-3 ngày</option>
+              <option value="5tr">Gói Bán Hàng E-Commerce / Cao Cấp (5.000.000đ) - Bàn giao 3-4 ngày</option>
+              <option value="custom">Thiết kế theo yêu cầu riêng</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mô tả sơ lược yêu cầu hoặc link web tham khảo:</label>
+            <textarea class="form-control" rows="4" placeholder="Ví dụ: Tôi muốn làm web phòng khám nha khoa giống Satr.vn, cần có nút Zalo và form đặt hẹn..."></textarea>
+          </div>
+
+          <div style="margin-top:24px;">
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              🚀 Gửi Yêu Cầu Cho Lê Thành Long
+            </button>
+          </div>
+        </form>
+
+        <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+          <span style="font-size:13px; color:var(--text-3);">Hotline khẩn cấp:</span>
+          <a href="tel:0325477523" style="font-size:15px; font-weight:800; color:var(--orange-2);">📞 0325477523</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: ZALO QR & TECHCOMBANK QR -->
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <!-- Zalo QR Box -->
+        <div style="background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-xl); padding:26px; text-align:center;">
+          <span class="pill pill-teal" style="margin-bottom:12px;">Kết Nối Trực Tiếp</span>
+          <h3 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:14px;">Quét Mã QR Zalo Lê Thành Long</h3>
+          <div style="background:#fff; border-radius:var(--radius); padding:12px; display:inline-block; margin-bottom:14px;">
+            <img src="assets/img/qr-zalo.jpg" alt="QR Zalo Lê Thành Long" style="max-width:200px; border-radius:8px;" />
+          </div>
+          <div style="font-size:14px; color:var(--text-2);">
+            Zalo: <b>0325477523</b> (Lê Thành Long)
+          </div>
+          <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-teal btn-sm" style="margin-top:12px;">
+            Mở Zalo Trên Điện Thoại ↗
+          </a>
+        </div>
+
+        <!-- Techcombank Payment Box -->
+        <div style="background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-xl); padding:26px; text-align:center;">
+          <span class="pill pill-orange" style="margin-bottom:12px;">Thanh Toán Cọc 50%</span>
+          <h3 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:14px;">Tài Khoản Techcombank Chính Chủ</h3>
+          <div style="background:#fff; border-radius:var(--radius); padding:12px; display:inline-block; margin-bottom:14px;">
+            <img src="assets/img/qr-techcombank.jpg" alt="QR Techcombank Lê Thành Long" style="max-width:200px; border-radius:8px;" />
+          </div>
+          <div class="bank-detail-box" style="text-align:left;">
+            <div class="bank-row">
+              <span class="bank-label">Ngân hàng:</span>
+              <span class="bank-value" style="font-family:inherit;">Techcombank</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label">Số tài khoản:</span>
+              <div class="bank-value">
+                <span>1104 2006 01</span>
+                <button class="copy-btn" id="copyBtn" onclick="copyBankAccount('1104200601')">Sao chép</button>
+              </div>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label">Chủ tài khoản:</span>
+              <span class="bank-value" style="font-family:inherit;">LE THANH LONG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Webx113.com</div>
+          <p class="footer-desc">
+            Dịch vụ thiết kế website theo yêu cầu uy tín hàng đầu. Siêu tốc 2 - 4 ngày, chi phí 1.2 — 5 triệu đồng, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo chốt khách tự động.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Liên Kết Nhanh</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="du-an.html">Dự Án Thực Tế</a></li>
+            <li><a href="bang-gia.html">Bảng Giá</a></li>
+            <li><a href="tin-tuc.html">Cẩm Nang Làm Web</a></li>
+            <li><a href="lien-he.html">Liên Hệ & Đặt Cọc</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Thông Tin Liên Hệ</div>
+          <div class="footer-contact-item">Hotline/Zalo: 0325477523</div>
+          <div class="footer-contact-item">Chủ tài khoản: LE THANH LONG</div>
+          <div class="footer-contact-item">STK: 1104 2006 01 (Techcombank)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Webx113.com. Bản quyền thuộc về Lê Thành Long.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BUTTONS -->
+  <div class="floating-actions">
+    <button class="float-btn btn-float-chat" onclick="toggleChatbot()" title="Tư vấn với AI Chatbot">🤖</button>
+    <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="float-btn btn-float-zalo" title="Chat Zalo ngay">
+      <svg viewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24c0 4.14 1.27 8.01 3.44 11.23L5 43l8.03-2.39C16.14 42.71 19.95 44 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm8.7 26.23c-.38.98-2.22 1.88-3.07 1.99-.81.1-1.85.15-3.01-.23-1.63-.53-4.08-1.74-6.44-4.1-3.03-3.03-4.48-6.17-4.88-7.92-.35-1.52.26-2.58.75-3.07.49-.49 1.13-.7 1.63-.7.5 0 .86.03 1.23.07.39.05.86-.16 1.34 1.01.5 1.23 1.73 4.22 1.88 4.53.15.31.25.68.04 1.1-.21.41-.32.67-.63 1.04-.32.36-.66.8-.94 1.07-.32.32-.65.66-.28 1.3.37.64 1.65 2.73 3.55 4.42 2.44 2.18 4.49 2.85 5.13 3.17.64.32 1.01.27 1.39-.16.38-.44 1.63-1.9 2.06-2.55.44-.66.87-.55 1.48-.32.6.22 3.86 1.82 4.52 2.15.66.33 1.1.5 1.26.77.16.27.16 1.57-.22 2.55z"/></svg>
+    </a>
+    <a href="tel:0325477523" class="float-btn btn-float-hotline" title="Gọi Hotline: 0325477523">📞</a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

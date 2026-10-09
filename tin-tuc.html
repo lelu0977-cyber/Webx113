@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cẩm Nang & Kinh Nghiệm Làm Web — Webx113.com</title>
+  <meta name="description" content="Chia sẻ bí quyết thiết kế website chuẩn SEO, mẹo tăng tỷ lệ chốt đơn Zalo, cách chọn tên miền kinh doanh đắt khách và tối ưu chi phí làm web hiệu quả nhất." />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f97316'/><text y='70' x='15' font-size='60' font-weight='bold' fill='white'>W</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 26px;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .blog-card:hover {
+      border-color: var(--border-md);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    }
+    .blog-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #fff;
+    }
+    .blog-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange-2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .blog-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-1);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .blog-excerpt {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .blog-meta {
+      font-size: 12px;
+      color: var(--text-3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-badge">W</div>
+        <div>
+          <span class="nav-logo-text">Webx113</span>
+          <span class="nav-logo-sub">Fast Web Agency</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="du-an.html">Dự Án Thực Tế</a></li>
+        <li><a href="bang-gia.html">Bảng Giá</a></li>
+        <li><a href="index.html#about">Về Webx113</a></li>
+        <li><a href="tin-tuc.html" class="active">Cẩm Nang Web</a></li>
+        <li><a href="lien-he.html" class="nav-highlight">⚡ Nhận Báo Giá 15 Phút</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <header style="padding: 60px 0 20px; text-align: center; position: relative;">
+    <div class="ambient-glow glow-teal" style="width:500px; height:500px; top:-100px; left:50%; transform:translateX(-50%);"></div>
+    <div class="container">
+      <div class="pill pill-teal">Kiến Thức Thực Chiến</div>
+      <h1 class="section-title">Cẩm Nang Phát Triển Website Doanh Nghiệp</h1>
+      <p class="section-sub">
+        Chia sẻ kinh nghiệm thiết kế website thực tế, mẹo tối ưu chuẩn SEO Google và cách biến website thành cỗ máy kéo khách hàng tự động.
+      </p>
+    </div>
+  </header>
+
+  <!-- ARTICLES GRID -->
+  <main class="container" style="padding-bottom: 100px;">
+    <div class="blog-grid">
+
+      <!-- POST 1 -->
+      <article class="blog-card">
+        <div class="blog-cover" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+          🚀
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">Chiến Lược Kinh Doanh</span>
+          <h2 class="blog-title">Tại Sao Kinh Doanh Năm 2026 Nhất Định Phải Có Website Riêng?</h2>
+          <p class="blog-excerpt">
+            Phụ thuộc hoàn toàn vào Facebook, TikTok khiến bạn đối mặt nguy cơ bị bóp tương tác, khóa tài khoản bất cứ lúc nào. Website là "ngôi nhà chính chủ" giúp khách hàng tin tưởng và tra cứu 24/7.
+          </p>
+          <div class="blog-meta">
+            <span>Tác giả: Lê Thành Long</span>
+            <span>⏱️ 5 phút đọc</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="blog-card">
+        <div class="blog-cover" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">
+          🔍
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">SEO Google Thực Chiến</span>
+          <h2 class="blog-title">Làm Sao Để Website Lên Top 1 Google Mà Không Cần Chạy Ads?</h2>
+          <p class="blog-excerpt">
+            Bí quyết tối ưu cấu trúc thẻ Semantic H1-H3, tốc độ tải trang dưới 1.5s và định vị từ khóa theo ngành (như Nha khoa, Spa, Cửa hàng) giúp website index và leo Top tự nhiên.
+          </p>
+          <div class="blog-meta">
+            <span>Tác giả: Lê Thành Long</span>
+            <span>⏱️ 7 phút đọc</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="blog-card">
+        <div class="blog-cover" style="background: linear-gradient(135deg, #0d9488 0%, #047857 100%);">
+          💬
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">Tăng Tỷ Lệ Chốt Đơn</span>
+          <h2 class="blog-title">Tuyệt Chiêu Tăng Gấp 3 Lần Tỷ Lệ Chốt Khách Nhờ Nút Zalo & Chatbot AI</h2>
+          <p class="blog-excerpt">
+            Khách hàng ngày nay rất lười điền form dài. Việc tích hợp nút Zalo rung lắc thu hút ánh nhìn và Chatbot chào tự động giúp 80% khách truy cập bấm trò chuyện ngay lập tức.
+          </p>
+          <div class="blog-meta">
+            <span>Tác giả: Lê Thành Long</span>
+            <span>⏱️ 4 phút đọc</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="blog-card">
+        <div class="blog-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);">
+          💡
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">Cẩm Nang Làm Web</span>
+          <h2 class="blog-title">Website 1.2 — 5 Triệu Tại Webx113 Khác Gì Các Web Giá Rẻ Kém Chất Lượng?</h2>
+          <p class="blog-excerpt">
+            Nhiều nơi làm web giá rẻ bằng theme rác khiến web chậm, dính mã độc. Tại Webx113, mọi website đều được tối ưu mã nguồn tinh gọn, bảo hành trọn đời và bàn giao thần tốc 2-4 ngày.
+          </p>
+          <div class="blog-meta">
+            <span>Tác giả: Lê Thành Long</span>
+            <span>⏱️ 6 phút đọc</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:60px; text-align:center;">
+      <a href="lien-he.html" class="btn btn-primary btn-lg">
+        ⚡ Bắt Đầu Xây Dựng Website Cho Bạn Ngay Hôm Nay
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Webx113.com</div>
+          <p class="footer-desc">
+            Dịch vụ thiết kế website theo yêu cầu uy tín hàng đầu. Siêu tốc 2 - 4 ngày, chi phí 1.2 — 5 triệu đồng, chuẩn SEO Google, tích hợp sẵn Chatbot AI & Nút Zalo chốt khách tự động.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Liên Kết Nhanh</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="du-an.html">Dự Án Thực Tế</a></li>
+            <li><a href="bang-gia.html">Bảng Giá</a></li>
+            <li><a href="tin-tuc.html">Cẩm Nang Làm Web</a></li>
+            <li><a href="lien-he.html">Liên Hệ & Đặt Cọc</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Liên Hệ</div>
+          <div class="footer-contact-item">Hotline: 0325477523</div>
+          <div class="footer-contact-item">Zalo: 0325477523 (Lê Thành Long)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Webx113.com. Bản quyền thuộc về Lê Thành Long.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BUTTONS -->
+  <div class="floating-actions">
+    <button class="float-btn btn-float-chat" onclick="toggleChatbot()" title="Tư vấn với AI Chatbot">🤖</button>
+    <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="float-btn btn-float-zalo" title="Chat Zalo ngay">
+      <svg viewBox="0 0 48 48"><path d="M24 4C12.95 4 4 12.95 4 24c0 4.14 1.27 8.01 3.44 11.23L5 43l8.03-2.39C16.14 42.71 19.95 44 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm8.7 26.23c-.38.98-2.22 1.88-3.07 1.99-.81.1-1.85.15-3.01-.23-1.63-.53-4.08-1.74-6.44-4.1-3.03-3.03-4.48-6.17-4.88-7.92-.35-1.52.26-2.58.75-3.07.49-.49 1.13-.7 1.63-.7.5 0 .86.03 1.23.07.39.05.86-.16 1.34 1.01.5 1.23 1.73 4.22 1.88 4.53.15.31.25.68.04 1.1-.21.41-.32.67-.63 1.04-.32.36-.66.8-.94 1.07-.32.32-.65.66-.28 1.3.37.64 1.65 2.73 3.55 4.42 2.44 2.18 4.49 2.85 5.13 3.17.64.32 1.01.27 1.39-.16.38-.44 1.63-1.9 2.06-2.55.44-.66.87-.55 1.48-.32.6.22 3.86 1.82 4.52 2.15.66.33 1.1.5 1.26.77.16.27.16 1.57-.22 2.55z"/></svg>
+    </a>
+    <a href="tel:0325477523" class="float-btn btn-float-hotline" title="Gọi Hotline: 0325477523">📞</a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
