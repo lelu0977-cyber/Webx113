@@ -1200,18 +1200,14 @@ body::before {
 }
 
 .about-photo-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 65%, rgba(6, 6, 10, 0.85) 100%);
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 .about-photo {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 2/3;
   object-fit: cover;
+  display: block;
 }
 
 .about-name {
