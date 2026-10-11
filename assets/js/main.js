@@ -468,7 +468,7 @@ function confirmPaymentAndSendEmail() {
 
 
 /* ============================================================
-   AI CHATBOT ENGINE
+   AI CHATBOT ENGINE (POWERED BY SALES_SCRIPT.MD & BRAND VOICE)
 ============================================================ */
 function toggleChatbot() {
   const chatWidget = document.getElementById('chatbotWidget');
@@ -486,6 +486,11 @@ function initChatbot() {
 
   if (!chatMessages || !chatInput || !chatSendBtn) return;
 
+  // Render standardized greeting if only empty or default
+  if (!chatMessages.querySelector('.msg-bot')) {
+    renderGreeting(chatMessages);
+  }
+
   function appendMsg(sender, text) {
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender === 'user' ? 'msg-user' : 'msg-bot');
@@ -500,7 +505,7 @@ function initChatbot() {
     appendMsg('user', text);
     chatInput.value = '';
 
-    // Typing simulation
+    // Typing simulation (600ms)
     setTimeout(() => {
       const reply = generateChatbotReply(text);
       appendMsg('bot', reply);
@@ -511,6 +516,22 @@ function initChatbot() {
   chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSend();
   });
+}
+
+function renderGreeting(container) {
+  container.innerHTML = `
+    <div class="chat-msg msg-bot">
+      Chào bạn nha! Mình là trợ lý tự động của Long bên <b>Webx113.com</b>.<br><br>
+      Bạn đang cần làm website cho ngành nghề nào thế? Cứ nhắn cho mình lĩnh vực hoặc thắc mắc của bạn, mình giải đáp và báo giá chính xác ngay nhé!
+      <div class="chat-quick-replies">
+        <button class="quick-btn" onclick="askChatbot('Báo giá chi tiết 3 gói')">💰 Báo giá 3 gói</button>
+        <button class="quick-btn" onclick="askChatbot('Làm web mất mấy ngày?')">⏱️ Thời gian mấy ngày?</button>
+        <button class="quick-btn" onclick="askChatbot('Sao giá rẻ thế?')">❓ Sao giá rẻ thế?</button>
+        <button class="quick-btn" onclick="askChatbot('Xem các web thực tế đã làm')">🌐 Xem web đã làm</button>
+        <button class="quick-btn" onclick="askChatbot('Để tôi suy nghĩ thêm')">🎁 Nhận demo miễn phí</button>
+      </div>
+    </div>
+  `;
 }
 
 function askChatbot(question) {
@@ -524,21 +545,140 @@ function askChatbot(question) {
 function generateChatbotReply(text) {
   const lower = text.toLowerCase();
 
-  if (lower.includes('giá') || lower.includes('chi phí') || lower.includes('bao nhiêu')) {
-    return 'Dạ tại <b>Webx113.com</b>, chi phí thiết kế web trọn gói từ <b>1.200.000đ đến 5.000.000đ</b> tương xứng với giá trị và quy mô từng dự án:<br>• <b>Gói Khởi Nghiệp (1.200.000đ):</b> 1 Landing Page CRO cao, chuẩn SEO cơ bản, cọc 600.000đ, xong trong 2 ngày.<br>• <b>Gói Doanh Nghiệp Chuẩn SEO (2.800.000đ - Đề xuất khuyên dùng):</b> Website đa trang, chuẩn SEO toàn diện, Chatbot AI cơ bản, cọc 1.400.000đ, xong trong 2-3 ngày.<br>• <b>Gói Bán Hàng E-Commerce / Cao Cấp (5.000.000đ):</b> Giỏ hàng đặt hàng, thanh toán SePay VietQR tự động, Chatbot AI chuyên sâu, cọc 2.500.000đ, xong trong 3-4 ngày.<br>Bạn đang muốn làm website cho lĩnh vực nào để Long tư vấn gói phù hợp nhất ạ?';
-  }
-  if (lower.includes('thời gian') || lower.includes('mấy ngày') || lower.includes('bao lâu')) {
-    return '⚡ Thời gian hoàn thành tại Webx113 siêu tốc chỉ từ <b>2 đến 4 ngày</b> là có ngay website chạy thực tế trên tên miền riêng, không để bạn phải chờ đợi lâu!';
-  }
-  if (lower.includes('zalo') || lower.includes('liên hệ') || lower.includes('sđt') || lower.includes('số điện thoại')) {
-    return '📞 Bạn có thể liên hệ trực tiếp với <b>Lê Thành Long</b> qua Hotline/Zalo: <b>0325477523</b> hoặc quét mã QR Zalo trên trang để nhận demo miễn phí trong 15 phút nhé!';
-  }
-  if (lower.includes('seo') || lower.includes('google')) {
-    return '🔍 100% website do Webx113 lập trình đều chuẩn SEO Onpage, cấu trúc thẻ Semantic HTML5, tốc độ load dưới 1.5s và thân thiện tuyệt đối với điện thoại, giúp bạn dễ dàng lên Top Google.';
-  }
-  if (lower.includes('feedback') || lower.includes('mẫu') || lower.includes('dự án')) {
-    return '✨ Bạn có thể xem các dự án thực tế đã chạy như: Nha Khoa Star (Hà Nội), Bách Khoa Smile (Phú Thọ), Be Wellness Spa (Phố Cổ) và Ebook Đào Tạo tại mục <b>Dự án thực tế</b> kèm feedback chân thực 5 sao từ khách hàng nhé!';
+  // 1. Khách muốn chốt đơn / mua / đặt làm / đăng ký
+  if (
+    lower.includes('đặt làm') || lower.includes('mua') || lower.includes('chốt đơn') ||
+    lower.includes('đăng ký') || lower.includes('triển khai') || lower.includes('chọn gói') ||
+    lower.includes('cọc tiền') || lower.includes('làm luôn')
+  ) {
+    return `Tuyệt vời! Nếu bạn thấy phương án này phù hợp với định hướng của bạn rồi thì mình chốt triển khai luôn nhé.<br><br>
+    Bạn chỉ cần đặt cọc trước 50%, sau 2 — 3 ngày là có web chạy thật trên mạng để bạn duyệt ưng ý 100% mới thanh toán nốt.<br><br>
+    👉 Bạn bấm vào nút đặt làm web bên dưới hoặc nhắn số Zalo để Long tạo nhóm triển khai ngay nhé!
+    <div class="chat-action-row">
+      <button class="chat-btn-order" onclick="openModal('Gói Doanh Nghiệp 2.800.000đ')">🚀 Đặt Làm Web Ngay (Mở Form Cọc)</button>
+      <a href="https://forms.gle/iqQQXz3mjEuUxDU36" target="_blank" rel="noopener" class="chat-btn-waitlist">📋 Điền Form Danh Sách Chờ Nhận Ưu Đãi ↗</a>
+      <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="chat-btn-zalo">💬 Nhắn Zalo Trực Tiếp Cho Long (0325477523)</a>
+    </div>`;
   }
 
-  return 'Cảm ơn bạn đã nhắn tin! Webx113 chuyên thiết kế website theo yêu cầu giá rẻ từ 1.2 — 5 triệu, bàn giao siêu tốc 2-4 ngày, chuẩn SEO và có sẵn Chatbot + nút Zalo. Bạn có thể để lại số Zalo hoặc gọi ngay <b>0325477523</b> để được Long hỗ trợ tư vấn 1-1 ngay nhé!';
+  // 2. Khách chưa sẵn sàng / suy nghĩ thêm / tham khảo / chưa có tiền
+  if (
+    lower.includes('suy nghĩ thêm') || lower.includes('nghĩ thêm') || lower.includes('tham khảo') ||
+    lower.includes('chưa sẵn sàng') || lower.includes('chưa mua') || lower.includes('đắt') ||
+    lower.includes('chưa có tiền') || lower.includes('phân vân')
+  ) {
+    return `Dạ không sao nè! Bạn cứ tham khảo và cân nhắc cho thật yên tâm nhé.<br><br>
+    Nhưng để bạn dễ hình dung website ngành của bạn khi lên hình thực tế sẽ đẹp thế nào, Long có hỗ trợ <b>DỰNG TRƯỚC 1 BẢN DEMO XEM THỬ HOÀN TOÀN MIỄN PHÍ</b>.<br><br>
+    Bạn chỉ mất 30 giây điền ngành nghề vào form danh sách chờ bên dưới, sau 2 tiếng Long sẽ gửi bản demo xem trước qua Zalo. Bạn xem ưng mắt thì mình làm tiếp, không làm cũng hoàn toàn không sao cả nha!
+    <div class="chat-action-row">
+      <a href="https://forms.gle/iqQQXz3mjEuUxDU36" target="_blank" rel="noopener" class="chat-btn-waitlist">📋 Bấm Điền Form Danh Sách Chờ (Nhận Demo 30s) ↗</a>
+      <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="chat-btn-zalo">💬 Hoặc Nhắn Zalo Trao Đổi Với Long: 0325477523</a>
+    </div>`;
+  }
+
+  // 3. Hỏi giá / chi phí / bao nhiêu
+  if (lower.includes('giá') || lower.includes('chi phí') || lower.includes('bao nhiêu') || lower.includes('bảng giá')) {
+    return `Bên Long có 3 gói niêm yết rõ ràng, không có phụ phí ẩn đâu bạn nhé:<br><br>
+    • <b>Gói Khởi Nghiệp (1.200.000đ):</b> 1 Landing page CRO, phù hợp bán 1 sản phẩm chính hoặc Ebook. Hoàn thiện trong 2 ngày.<br>
+    • <b>Gói Doanh Nghiệp (2.800.000đ - Đề xuất chọn nhiều):</b> Web đa trang chuẩn SEO, phù hợp nha khoa, spa, công ty. Tích hợp Chatbot AI + Nút Zalo, bảo hành trọn đời. Hoàn thiện 2 - 3 ngày.<br>
+    • <b>Gói Bán Hàng E-Commerce (5.000.000đ):</b> Đầy đủ giỏ hàng, SePay VietQR tự động nhận tiền. Hoàn thiện 3 - 4 ngày.<br><br>
+    Bạn đang kinh doanh mảng gì để mình tư vấn gói tiết kiệm nhất?
+    <div class="chat-action-row">
+      <button class="chat-btn-order" onclick="openModal('Gói Doanh Nghiệp 2.800.000đ')">🔥 Chọn Gói 2.8 Triệu (Chuẩn SEO)</button>
+      <button class="chat-btn-order" onclick="openModal('Gói Khởi Nghiệp 1.200.000đ')" style="background:#475569;">Chọn Gói 1.2 Triệu (Khởi Nghiệp)</button>
+      <a href="https://forms.gle/iqQQXz3mjEuUxDU36" target="_blank" rel="noopener" class="chat-btn-waitlist">📋 Điền Form Nhận Demo Miễn Phí ↗</a>
+    </div>`;
+  }
+
+  // 4. Hỏi sao rẻ thế / lừa đảo / dởm
+  if (lower.includes('sao rẻ') || lower.includes('rẻ thế') || lower.includes('lừa đảo') || lower.includes('dởm') || lower.includes('chất lượng')) {
+    return `Mình hiểu bạn lo lắng nè! Giá bên mình rẻ không phải vì cắt bớt chất lượng, mà vì Long tối ưu quy trình: dùng bộ khung mã nguồn tối ưu sẵn và ứng dụng AI để tăng tốc độ làm, không mất chi phí mặt bằng văn phòng hoành tráng hay đội ngũ sale trung gian như các agency.<br><br>
+    Đặc biệt, bên mình có sẵn kho web thật đang chạy trên mạng (như Satr.vn, Smile.vn...) để bạn bấm vào test thử tốc độ thực tế luôn. Bạn chỉ cần cọc 50%, web chạy thật bạn duyệt ưng ý 100% mới thanh toán nốt. Nếu không đúng cam kết, Long hoàn cọc 100% ngay trong ngày nhé!
+    <div class="chat-action-row">
+      <button class="quick-btn" onclick="askChatbot('Xem các web thực tế đã làm')">🌐 Bấm xem các web thật đang chạy</button>
+      <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="chat-btn-zalo">💬 Chat Zalo Trực Tiếp: 0325477523</a>
+    </div>`;
+  }
+
+  // 5. Hỏi thời gian / mấy ngày / bao lâu / có ẩu không
+  if (lower.includes('thời gian') || lower.includes('mấy ngày') || lower.includes('bao lâu') || lower.includes('có ẩu không') || lower.includes('nhanh thế')) {
+    return `Chắc chắn không ẩu bạn nhé! Các bên khác làm mất cả tháng là vì qua nhiều khâu trung gian, chờ duyệt qua lại. Còn ở Webx113, Long trực tiếp làm việc 1-kèm-1 với bạn, tập trung cao độ dứt điểm từng dự án.<br><br>
+    Sau <b>2 - 4 ngày</b> là bạn có ngay bản web chạy thật trên mạng để kiểm tra từng nút bấm, form điền. Bạn ưng ý từng chi tiết thì mới bàn giao chính thức ạ!`;
+  }
+
+  // 6. Hỏi phí duy trì / hàng năm / thuê bao / gia hạn
+  if (lower.includes('duy trì') || lower.includes('hàng năm') || lower.includes('thuê bao') || lower.includes('gia hạn') || lower.includes('mất thêm tiền')) {
+    return `Tuyệt đối <b>KHÔNG</b> bạn nhé! Tiêu chí của bên mình là: <b>Làm 1 Lần — Dùng Trọn Đời</b>.<br><br>
+    Bạn được bàn giao 100% mã nguồn website, sở hữu vĩnh viễn. Không bao giờ có chuyện mỗi năm bị đòi tiền duy trì nền tảng vài triệu như các bên cho thuê web đâu ạ!`;
+  }
+
+  // 7. Chuẩn SEO / Google / lên top
+  if (lower.includes('seo') || lower.includes('google') || lower.includes('lên top') || lower.includes('tìm kiếm')) {
+    return `Có chắc chắn luôn bạn nhé! Toàn bộ website đều được tối ưu chuẩn kỹ thuật: thẻ tiêu đề H1-H3, thẻ mô tả Meta, sitemap và tốc độ tải trang cực nhẹ dưới 1.5 giây (điểm Google PageSpeed xanh lè).<br><br>
+    Đây là nền móng chuẩn chỉ nhất để khi bạn đăng bài viết hay chạy quảng cáo thì web sẽ rất dễ leo top Google.`;
+  }
+
+  // 8. Không biết code / mù công nghệ / sửa web / thay ảnh / đổi giá
+  if (lower.includes('không biết code') || lower.includes('mù công nghệ') || lower.includes('không rành') || lower.includes('sửa web') || lower.includes('thay ảnh') || lower.includes('đổi giá') || lower.includes('quản trị')) {
+    return `Bạn cứ yên tâm nha, không cần biết một dòng code nào cả! Khi bàn giao, Long sẽ gửi video quay màn hình hướng dẫn riêng hoặc gọi Zalo/Ultraview cầm tay chỉ việc.<br><br>
+    Thay số điện thoại, đổi giá sản phẩm hay đăng bài mới chỉ mất đúng 1 phút thao tác đơn giản như đăng bài Facebook thôi nè!`;
+  }
+
+  // 9. Bảo hành / lỗi ai sửa / hỗ trợ kỹ thuật
+  if (lower.includes('bảo hành') || lower.includes('lỗi ai sửa') || lower.includes('hỗ trợ kỹ thuật') || lower.includes('bị lỗi')) {
+    return `Webx113 bảo hành kỹ thuật <b>trọn đời</b> cho gói Doanh Nghiệp và Bán Hàng (6 tháng với gói Khởi Nghiệp).<br><br>
+    Bất cứ lúc nào web có vấn đề gì hoặc bạn cần hỗ trợ thay đổi thông tin cơ bản, cứ nhắn trực tiếp qua Zalo <b>0325477523</b> của Long, Long sẽ hỗ trợ xử lý ngay trong vài tiếng.`;
+  }
+
+  // 10. Chatbot / nút Zalo
+  if (lower.includes('chatbot') || lower.includes('nút zalo') || lower.includes('zalo rung lắc')) {
+    return `Có sẵn luôn bạn nhé! Mọi web đều được gắn nút Zalo rung lắc gom khách trực tiếp về điện thoại của bạn.<br><br>
+    Với gói 2.8Tr và 5Tr, bên mình tích hợp sẵn Chatbot AI trực 24/7 như thế này — khách vào lúc nửa đêm vẫn được tư vấn và xin số điện thoại tự động, bạn không lo bị sót khách!`;
+  }
+
+  // 11. Xem web thực tế / dự án / portfolio
+  if (lower.includes('mẫu') || lower.includes('dự án') || lower.includes('thực tế') || lower.includes('portfolio') || lower.includes('xem web')) {
+    return `Có chứ bạn! Bạn có thể xem ngay các dự án thực tế đang chạy của khách bên mình nè:<br><br>
+    • <b>Nha Khoa Thẩm Mỹ Star:</b> <a href="https://lelu0977-cyber.github.io/Satr.vn/" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:underline;">Satr.vn (57 Lê Văn Hưu, HN) ↗</a><br>
+    • <b>Nha Khoa Bách Khoa Smile:</b> <a href="https://lelu0977-cyber.github.io/Smile.vn/" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:underline;">Smile.vn (16 Lạc Long Quân) ↗</a><br>
+    • <b>Be Wellness Spa Hà Nội:</b> <a href="https://longlesinep114-web.github.io/Wellness-sapa/" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:underline;">Wellness Spa Phố Cổ ↗</a><br>
+    • <b>Landing Page Ebook:</b> <a href="https://longlesinep114-web.github.io/giao-ti-p-ng-x-/" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:underline;">Ebook Kỹ Năng Giao Tiếp ↗</a><br><br>
+    Bạn thích phong cách của mẫu nào trong các mẫu trên?
+    <div class="chat-action-row">
+      <a href="du-an.html" class="quick-btn" style="text-align:center;">👉 Xem Kho 15+ Mẫu Web Khác</a>
+      <a href="https://forms.gle/iqQQXz3mjEuUxDU36" target="_blank" rel="noopener" class="chat-btn-waitlist">📋 Điền Form Nhận Demo Ngành Bạn ↗</a>
+    </div>`;
+  }
+
+  // 12. Quy trình / đặt cọc / thanh toán / chuyển khoản / hoàn cọc
+  if (lower.includes('quy trình') || lower.includes('đặt cọc') || lower.includes('cọc') || lower.includes('thanh toán') || lower.includes('mất cọc') || lower.includes('hoàn cọc') || lower.includes('stk') || lower.includes('số tài khoản')) {
+    return `Quy trình cực kỳ minh bạch và an toàn cho bạn:<br><br>
+    1. Hai bên chốt yêu cầu & giao diện mẫu.<br>
+    2. Bạn đặt cọc 50% để Long bắt tay vào làm.<br>
+    3. Sau 2 - 4 ngày, bạn kiểm tra web chạy thật trên mạng, chỉnh sửa 100% ưng ý mới thanh toán 50% còn lại.<br><br>
+    👉 <b>Cam kết vàng:</b> Nếu web làm xong không đúng như thỏa thuận ban đầu hoặc chậm tiến độ không lý do, Long hoàn cọc 100% ngay trong ngày!
+    <div class="chat-action-row">
+      <button class="chat-btn-order" onclick="openModal('Gói Doanh Nghiệp 2.800.000đ')">🚀 Đặt Làm Web Ngay (Cọc 50%)</button>
+      <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="chat-btn-zalo">💬 Chat Zalo Với Long: 0325477523</a>
+    </div>`;
+  }
+
+  // 13. Zalo / Hotline / Số điện thoại
+  if (lower.includes('zalo') || lower.includes('hotline') || lower.includes('sđt') || lower.includes('số điện thoại') || lower.includes('liên hệ')) {
+    return `📞 Bạn có thể liên hệ trực tiếp với <b>Lê Thành Long</b> qua Hotline/Zalo: <b>0325477523</b>.<br><br>
+    Long hỗ trợ 24/7 và gửi báo giá kèm khung giao diện demo chỉ sau 15 phút nhé!
+    <div class="chat-action-row">
+      <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="chat-btn-zalo" style="background:#2563eb; color:#fff !important;">💬 Mở Zalo 0325477523 Ngay ↗</a>
+    </div>`;
+  }
+
+  // Mặc định
+  return `Cảm ơn bạn đã nhắn tin! Webx113 chuyên thiết kế website theo yêu cầu trọn gói 1.2 — 5 triệu, bàn giao siêu tốc 2-4 ngày, chuẩn SEO và có sẵn Chatbot + nút Zalo.<br><br>
+  Bạn có thể bấm vào các gợi ý nhanh bên dưới hoặc nhắn số Zalo để Long tư vấn 1-kèm-1 ngay nhé!
+  <div class="chat-quick-replies">
+    <button class="quick-btn" onclick="askChatbot('Báo giá chi tiết 3 gói')">💰 Báo giá 3 gói</button>
+    <button class="quick-btn" onclick="askChatbot('Làm web mất mấy ngày?')">⏱️ Thời gian mấy ngày?</button>
+    <button class="quick-btn" onclick="askChatbot('Xem các web thực tế đã làm')">🌐 Xem web đã làm</button>
+    <button class="quick-btn" onclick="askChatbot('Để tôi suy nghĩ thêm')">🎁 Nhận demo miễn phí</button>
+  </div>`;
 }

@@ -245,6 +245,37 @@
     <a href="tel:0325477523" class="float-btn btn-float-hotline" title="Gọi Hotline: 0325477523">📞</a>
   </div>
 
+  <!-- CHATBOT WIDGET -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-name">Trợ Lý AI Webx113</div>
+          <div class="chat-status"><span class="live-dot" style="width:6px;height:6px;"></span> Sẵn sàng 24/7</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg msg-bot">
+        Chào bạn nha! Mình là trợ lý tự động của Long bên <b>Webx113.com</b>.<br><br>
+        Bạn đang cần làm website cho ngành nghề nào thế? Cứ nhắn cho mình lĩnh vực hoặc thắc mắc của bạn, mình giải đáp và báo giá chính xác ngay nhé!
+        <div class="chat-quick-replies">
+          <button class="quick-btn" onclick="askChatbot('Báo giá chi tiết 3 gói')">💰 Báo giá 3 gói</button>
+          <button class="quick-btn" onclick="askChatbot('Làm web mất mấy ngày?')">⏱️ Thời gian mấy ngày?</button>
+          <button class="quick-btn" onclick="askChatbot('Sao giá rẻ thế?')">❓ Sao giá rẻ thế?</button>
+          <button class="quick-btn" onclick="askChatbot('Xem các web thực tế đã làm')">🌐 Xem web đã làm</button>
+          <button class="quick-btn" onclick="askChatbot('Để tôi suy nghĩ thêm')">🎁 Nhận demo miễn phí</button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Nhập câu hỏi của bạn..." />
+      <button class="chat-send-btn" id="chatSendBtn">➤</button>
+    </div>
+  </div>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
