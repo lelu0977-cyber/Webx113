@@ -825,11 +825,14 @@
               </div>
             </div>
 
-            <div style="margin-top:14px;">
-              <button class="modal-btn-checkout" id="btnSubmitLead" onclick="submitFreeConsultation()" style="background:#ea580c; border:none; width:100%; font-size:15px; font-weight:700; cursor:pointer;">
-                🚀 Gửi Yêu Cầu — Nhận Demo Miễn Phí Qua Zalo
+            <div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
+              <button class="modal-btn-checkout" id="btnGoToQR" onclick="goToStep2()" style="background:#2563eb; color:#fff; border:none; width:100%; font-size:15px; font-weight:700; cursor:pointer; padding:12px; border-radius:10px;">
+                ⚡ Tiến Hành Đặt Cọc & Quét Mã QR Ngay →
               </button>
-              <div style="text-align:center; margin-top:8px;">
+              <button type="button" id="btnSubmitLead" onclick="submitFreeConsultation()" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; width:100%; font-size:13.5px; font-weight:600; cursor:pointer; padding:10px; border-radius:10px;">
+                🚀 Hoặc gửi yêu cầu nhận Demo miễn phí trước
+              </button>
+              <div style="text-align:center; margin-top:4px;">
                 <a href="https://zalo.me/0325477523" target="_blank" style="font-size:12.5px; color:#0284c7; text-decoration:none; font-weight:600;">
                   Hoặc bấm vào đây để nhắn Zalo trực tiếp cho Long →
                 </a>
@@ -888,14 +891,14 @@
               <div class="bank-row-item">
                 <div class="bank-row-label">Ngân hàng</div>
                 <div class="bank-row-val-wrap">
-                  <span class="bank-row-val">Techcombank</span>
+                  <span class="bank-row-val">BIDV (Ngân hàng Đầu tư và Phát triển VN)</span>
                 </div>
               </div>
 
               <div class="bank-row-item">
                 <div class="bank-row-label">Số tài khoản</div>
                 <div class="bank-row-val-wrap">
-                  <span class="bank-row-val" id="step2AccNum">1104 2006 01</span>
+                  <span class="bank-row-val" id="step2AccNum">8852040649</span>
                   <button class="bank-copy-icon" onclick="copyText('step2AccNum', this)" title="Sao chép">📋 Sao chép</button>
                 </div>
               </div>

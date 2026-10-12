@@ -280,10 +280,10 @@ function goToStep2() {
   const step2Syntax = document.getElementById('step2Syntax');
   if (step2Syntax) step2Syntax.innerText = syntaxText;
 
-// Generate Dynamic SePay VietQR (Techcombank 1104200601 + Auto Amount + Auto Syntax)
+  // Generate Dynamic SePay VietQR (BIDV 8852040649 + Auto Amount + Auto Syntax)
   const qrImg = document.getElementById('modalQrImage');
   if (qrImg) {
-    qrImg.src = `https://qr.sepay.vn/img?acc=1104200601&bank=TCB&amount=${numericDeposit}&des=${encodeURIComponent(syntaxText)}`;
+    qrImg.src = `https://qr.sepay.vn/img?bank=BIDV&acc=8852040649&template=compact&amount=${numericDeposit}&des=${encodeURIComponent(syntaxText)}`;
   }
 
   // Hide Step 1, Show Step 2, Hide Step 3
