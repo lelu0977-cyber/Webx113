@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán Tự Động - Cổng Sepay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-sans min-h-screen py-10 px-4">
+  <div class="max-w-2xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-2xl shadow-lg mb-3">
+        <i class="fa-solid fa-bolt text-2xl"></i>
+      </div>
+      <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Thanh Toán Trực Tuyến</h1>
+      <p class="text-slate-500 text-sm mt-1">Xác nhận đơn hàng và quét mã VietQR tự động qua Sepay</p>
+    </div>
+
+    <!-- KHỐI 1: FORM ĐIỀN THÔNG TIN -->
+    <div id="step-form" class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
+      <h2 class="text-lg font-bold text-slate-800 mb-4 pb-2 border-b border-slate-100 flex items-center">
+        <i class="fa-solid fa-user-check text-blue-600 mr-2"></i> Thông Tin Người Mua
+      </h2>
+      <form id="checkout-form" onsubmit="createOrder(event)" class="space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Họ và tên của bạn <span class="text-red-500">*</span></label>
+          <input type="text" id="cust-name" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Số điện thoại / Zalo <span class="text-red-500">*</span></label>
+          <input type="tel" id="cust-phone" required pattern="[0-9]{10,11}" placeholder="0988888888 (10 số để nhận xác nhận)" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+          <p class="text-xs text-slate-400 mt-1">Hệ thống tự động liên hệ kích hoạt dịch vụ qua số điện thoại này.</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Chọn sản phẩm / dịch vụ <span class="text-red-500">*</span></label>
+          <select id="cust-product" required onchange="updatePriceDisplay()" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+            <!-- Render via JS -->
+          </select>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl flex justify-between items-center border border-slate-100">
+          <span class="text-sm font-medium text-slate-600">Tổng tiền thanh toán:</span>
+          <span id="display-price" class="text-2xl font-black text-blue-600">0 đ</span>
+        </div>
+
+        <button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-200 flex items-center justify-center space-x-2">
+          <span>Tiến hành thanh toán</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- KHỐI 2: MÀN HÌNH QUÉT MÃ QR SEPAY -->
+    <div id="step-qr" class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 hidden">
+      <div class="text-center mb-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 animate-pulse">
+          ⏳ Đang chờ chuyển khoản...
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 mt-3">Quét mã QR để thanh toán</h2>
+        <p class="text-slate-500 text-sm">Hệ thống sẽ tự động duyệt đơn ngay khi nhận được tiền</p>
+      </div>
+
+      <!-- QR Code Image -->
+      <div class="flex justify-center mb-6">
+        <div class="p-4 bg-gradient-to-tr from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-2xl shadow-inner inline-block">
+          <img id="qr-image" src="" alt="Sepay QR Code" class="w-64 h-64 mx-auto object-contain rounded-lg">
+        </div>
+      </div>
+
+      <!-- Thông tin chuyển khoản -->
+      <div class="space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-200 text-sm">
+        <div class="flex justify-between py-1 border-b border-slate-200">
+          <span class="text-slate-500">Ngân hàng:</span>
+          <span id="qr-bank" class="font-bold text-slate-800">BIDV</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-slate-200">
+          <span class="text-slate-500">Số tài khoản:</span>
+          <span id="qr-acc" class="font-mono font-bold text-blue-600">8852040649</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-slate-200">
+          <span class="text-slate-500">Chủ tài khoản:</span>
+          <span id="qr-name" class="font-bold text-slate-800">LE THANH LONG</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-slate-200">
+          <span class="text-slate-500">Số tiền:</span>
+          <span id="qr-amount" class="font-black text-red-600 text-lg">0 đ</span>
+        </div>
+        <div class="flex justify-between items-center py-1">
+          <span class="text-slate-500">Nội dung CK:</span>
+          <div class="flex items-center space-x-2">
+            <span id="qr-des" class="font-mono font-black text-indigo-700 bg-indigo-100 px-2.5 py-0.5 rounded text-base">DH...</span>
+            <button onclick="copyDes()" class="text-xs text-blue-600 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <p class="text-xs text-slate-400">💡 Quét mã QR bằng App Ngân Hàng bất kỳ. Tiền vào đúng nội dung là hệ thống tự kích hoạt.</p>
+      </div>
+
+      <!-- Nút test nhanh (Nếu chưa muốn bắn tiền thật) -->
+      <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
+        <a href="/admin" target="_blank" class="text-xs text-slate-500 hover:text-blue-600">
+          <i class="fa-solid fa-gear mr-1"></i> Xem đơn hàng trong Admin
+        </a>
+        <button onclick="simulateSuccess()" class="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-lg border border-emerald-200 font-medium">
+          ⚡ Giả lập thanh toán thành công
+        </button>
+      </div>
+    </div>
+
+    <!-- KHỐI 3: MÀN HÌNH THÀNH CÔNG -->
+    <div id="step-success" class="bg-white rounded-2xl shadow-xl border border-slate-100 p-8 text-center hidden">
+      <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
+        <i class="fa-solid fa-check text-4xl"></i>
+      </div>
+      <h2 class="text-3xl font-black text-slate-900 mb-2">Thanh Toán Thành Công! 🎉</h2>
+      <p class="text-slate-600 mb-6">Cảm ơn bạn đã tin tưởng dịch vụ! Chúng tôi đã ghi nhận đơn hàng và sẽ liên hệ kích hoạt ngay lập tức.</p>
+
+      <div class="bg-slate-50 p-4 rounded-xl text-left border border-slate-100 mb-6 text-sm space-y-2">
+        <div class="flex justify-between"><span class="text-slate-500">Mã đơn hàng:</span><span id="succ-code" class="font-mono font-bold text-slate-800"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Khách hàng:</span><span id="succ-name" class="font-bold text-slate-800"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Sản phẩm:</span><span id="succ-product" class="text-slate-800 font-medium"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Số tiền:</span><span id="succ-amount" class="text-green-600 font-bold"></span></div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/" class="px-6 py-3 bg-slate-900 text-white rounded-xl text-sm font-semibold hover:bg-slate-800">
+          Về Trang Chủ
+        </a>
+        <a href="/admin" target="_blank" class="px-6 py-3 bg-blue-50 text-blue-700 rounded-xl text-sm font-semibold hover:bg-blue-100">
+          Xem trong Admin Panel
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let products = [];
+    let currentOrderId = null;
+    let pollInterval = null;
+
+    const DEFAULT_PACKAGES = [
+      { id: 1, name: "Gói Khởi Nghiệp (Landing Page)", price: 1200000 },
+      { id: 2, name: "Gói Doanh Nghiệp Chuẩn SEO", price: 2800000 },
+      { id: 3, name: "Gói Bán Hàng E-Commerce / Cao Cấp", price: 5000000 }
+    ];
+
+    async function loadProducts() {
+      try {
+        const res = await fetch('/api/products');
+        products = await res.json();
+        if (!products || products.length === 0) products = DEFAULT_PACKAGES;
+      } catch (e) {
+        products = DEFAULT_PACKAGES;
+      }
+
+      const sel = document.getElementById('cust-product');
+      sel.innerHTML = products.map(p => `
+        <option value="${p.id}" data-price="${p.price}" data-name="${p.name}">
+          ${p.name} - ${Number(p.price).toLocaleString('vi-VN')} đ
+        </option>
+      `).join('');
+
+      // Thêm option test 2000đ theo SOP lên đầu
+      const optTest = document.createElement('option');
+      optTest.value = "test-2k";
+      optTest.text = "🎯 Gói Test Thanh Toán Tự Động Sepay - 2.000 đ";
+      optTest.dataset.price = "2000";
+      optTest.dataset.name = "Test Thanh Toán Tự Động (SOP)";
+      sel.insertBefore(optTest, sel.firstChild);
+      sel.selectedIndex = 0;
+      updatePriceDisplay();
+    }
+
+    function updatePriceDisplay() {
+      const sel = document.getElementById('cust-product');
+      const opt = sel.options[sel.selectedIndex];
+      if (opt && opt.dataset.price) {
+        document.getElementById('display-price').innerText = Number(opt.dataset.price).toLocaleString('vi-VN') + ' đ';
+      }
+    }
+
+    async function createOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const sel = document.getElementById('cust-product');
+      const opt = sel.options[sel.selectedIndex];
+      const amount = Number(opt.dataset.price);
+      const productName = opt.dataset.name;
+      const productId = sel.value === 'test-2k' ? null : Number(sel.value);
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang khởi tạo đơn hàng...';
+
+      try {
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customer_name: name,
+            customer_phone: phone,
+            product_id: productId,
+            product_name: productName,
+            amount: amount,
+            status: 'pending'
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          currentOrderId = data.order_id;
+          showQR(data, name, productName);
+        }
+      } catch (err) {
+        // Fallback chế độ chạy tĩnh (khi deploy lên GitHub Pages)
+        const paymentCode = 'DH' + Math.floor(10000 + Math.random() * 90000);
+        const qrUrl = `https://qr.sepay.vn/img?bank=BIDV&acc=8852040649&template=compact&amount=${amount}&des=${paymentCode}`;
+        showQR({
+          qr_url: qrUrl,
+          bank: 'BIDV',
+          account: '8852040649',
+          account_name: 'LE THANH LONG',
+          amount: amount,
+          payment_code: paymentCode
+        }, name, productName);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Tiến hành thanh toán</span> <i class="fa-solid fa-arrow-right"></i>';
+      }
+    }
+
+    function showQR(orderData, custName, prodName) {
+      document.getElementById('step-form').classList.add('hidden');
+      document.getElementById('step-qr').classList.remove('hidden');
+
+      document.getElementById('qr-image').src = orderData.qr_url;
+      document.getElementById('qr-bank').innerText = orderData.bank;
+      document.getElementById('qr-acc').innerText = orderData.account;
+      document.getElementById('qr-name').innerText = orderData.account_name;
+      document.getElementById('qr-amount').innerText = Number(orderData.amount).toLocaleString('vi-VN') + ' đ';
+      document.getElementById('qr-des').innerText = orderData.payment_code;
+
+      // Lưu info hiển thị màn hình success
+      window.lastOrderInfo = {
+        code: orderData.payment_code,
+        name: custName,
+        product: prodName,
+        amount: Number(orderData.amount).toLocaleString('vi-VN') + ' đ'
+      };
+
+      // Bắt đầu Polling kiểm tra xem trạng thái đã sang 'success' chưa
+      if (pollInterval) clearInterval(pollInterval);
+      pollInterval = setInterval(checkOrderStatus, 2500);
+    }
+
+    async function checkOrderStatus() {
+      if (!currentOrderId) return;
+      try {
+        const res = await fetch('/api/order-status?id=' + currentOrderId);
+        const data = await res.json();
+        if (data.status === 'success') {
+          clearInterval(pollInterval);
+          showSuccess();
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function showSuccess() {
+      document.getElementById('step-qr').classList.add('hidden');
+      document.getElementById('step-success').classList.remove('hidden');
+      if (window.lastOrderInfo) {
+        document.getElementById('succ-code').innerText = window.lastOrderInfo.code;
+        document.getElementById('succ-name').innerText = window.lastOrderInfo.name;
+        document.getElementById('succ-product').innerText = window.lastOrderInfo.product;
+        document.getElementById('succ-amount').innerText = window.lastOrderInfo.amount;
+      }
+    }
+
+    function copyDes() {
+      const text = document.getElementById('qr-des').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Đã copy nội dung: ' + text);
+    }
+
+    async function simulateSuccess() {
+      if (!currentOrderId) return;
+      await fetch('/api/orders/update-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: currentOrderId, status: 'success' })
+      });
+      showSuccess();
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>

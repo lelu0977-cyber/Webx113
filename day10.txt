@@ -1,0 +1,13 @@
+Kinh doanh thời nay mà vẫn ngồi check sao kê thủ công, nhắn tin xin bill chuyển khoản từng người một thì đúng là tự bào mòn sức lực của chính mình.
+
+Hôm nay chính thức bấm nút kích hoạt hệ thống bán hàng tự động 100% trên website:
+- Khách chọn gói dịch vụ -> Quét mã VietQR động
+- Tiền vào tài khoản -> Hệ thống tự động nhận diện và xác nhận đơn hàng trong đúng 3 giây
+- Quản lý toàn bộ thông tin khách hàng, đơn hàng, tồn kho gom về một chỗ trong Mini CRM, không cần ghi sổ tay hay lưu file Excel chắp vá nữa.
+
+Không còn cảnh khách chuyển xong phải đỏ mắt chờ xác nhận, cũng không lo mấy vụ làm giả bill chuyển khoản làm màu. Mọi thứ tự động, minh bạch và gọn gàng từ đầu đến cuối.
+
+Anh em có thể bấm vào test thử trải nghiệm quét QR nhận tiền tự động siêu tốc tại đây:
+👉 https://webx113.com/thanh-toan
+
+Làm một lần, vận hành tự động trọn đời!

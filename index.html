@@ -41,7 +41,7 @@
         <li><a href="bang-gia.html">Bảng Giá</a></li>
         <li><a href="#about">Về Webx113</a></li>
         <li><a href="tin-tuc.html">Cẩm Nang Web</a></li>
-        <li><a href="lien-he.html" class="nav-highlight">⚡ Nhận Báo Giá 15 Phút</a></li>
+        <li><a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="nav-highlight">💬 Chat Zalo Với Long (0325.477.523)</a></li>
       </ul>
     </div>
   </nav>
@@ -78,11 +78,11 @@
 
           <div class="hero-actions">
             <button class="btn btn-primary btn-lg" onclick="openModal('Tư vấn thiết kế web siêu tốc')">
-              🚀 Đặt Làm Web Ngay
+              🎁 Nhận Demo Miễn Phí (15 Phút)
             </button>
-            <button class="btn btn-ghost" onclick="highlightRows(['sched-time', 'sched-cost'])">
-              Xem Cam Kết
-            </button>
+            <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:#0284c7; color:#38bdf8;">
+              💬 Nhắn Zalo: 0325.477.523
+            </a>
             <div class="hero-price-tag">
               <small>Chi phí trọn gói</small>
               <strong>1.200.000đ — 5.000.000đ</strong>
@@ -803,32 +803,37 @@
               <div class="order-service-name" id="modalSummaryTitle">Gói Doanh Nghiệp Chuẩn SEO</div>
               <div class="order-service-desc">Thiết kế theo yêu cầu cùng Lê Thành Long</div>
 
-              <div class="order-highlight-box">
-                <p id="modalHighlightInfo">
-                  Bàn giao siêu tốc trong <b>2 — 3 ngày</b><br />
-                  Chi phí trọn gói: <b>2.800.000đ</b> (Cọc 50%: <b>1.400.000đ</b>)
+              <div class="order-highlight-box" style="background:#f0fdf4; border-color:#bbf7d0;">
+                <p id="modalHighlightInfo" style="color:#166534;">
+                  ✨ <b>Tư vấn & Phác thảo Demo miễn phí 100%</b><br />
+                  Sau khi xem ưng ý giao diện mới quyết định làm hay không!
                 </p>
               </div>
 
               <div class="modal-input-group">
-                <label class="modal-input-label">Số điện thoại / Zalo nhận bàn giao (bắt buộc)</label>
+                <label class="modal-input-label">Số điện thoại / Zalo của bạn (để gửi bản Demo)</label>
                 <input type="tel" class="modal-input" id="customerPhone" placeholder="Ví dụ: 0325 xxx xxx" required />
               </div>
 
               <div class="modal-input-group">
-                <label class="modal-input-label">Họ tên & Lĩnh vực kinh doanh của bạn</label>
-                <input type="text" class="modal-input" id="customerName" placeholder="Ví dụ: Anh Nam - Phòng khám Nha Khoa" />
+                <label class="modal-input-label">Tên của bạn & Ngành nghề đang kinh doanh</label>
+                <input type="text" class="modal-input" id="customerName" placeholder="Ví dụ: Anh Nam - Spa / Phòng khám / Đồ gia dụng" />
               </div>
 
-              <div style="font-size:12px; color:#64748b; margin-top:8px; line-height:1.5;">
-                🎁 Hỗ trợ dựng bản demo xem trước sau 2 giờ làm việc.
+              <div style="font-size:12.5px; color:#16a34a; margin-top:8px; line-height:1.5; font-weight:600;">
+                🎁 Long sẽ liên hệ qua Zalo gửi Demo mẫu trong vòng 15 - 30 phút.
               </div>
             </div>
 
-            <div>
-              <button class="modal-btn-checkout" onclick="goToStep2()">
-                Tiến hành thanh toán →
+            <div style="margin-top:14px;">
+              <button class="modal-btn-checkout" id="btnSubmitLead" onclick="submitFreeConsultation()" style="background:#ea580c; border:none; width:100%; font-size:15px; font-weight:700; cursor:pointer;">
+                🚀 Gửi Yêu Cầu — Nhận Demo Miễn Phí Qua Zalo
               </button>
+              <div style="text-align:center; margin-top:8px;">
+                <a href="https://zalo.me/0325477523" target="_blank" style="font-size:12.5px; color:#0284c7; text-decoration:none; font-weight:600;">
+                  Hoặc bấm vào đây để nhắn Zalo trực tiếp cho Long →
+                </a>
+              </div>
             </div>
           </div>
         </div>

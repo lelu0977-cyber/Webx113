@@ -280,7 +280,7 @@ function goToStep2() {
   const step2Syntax = document.getElementById('step2Syntax');
   if (step2Syntax) step2Syntax.innerText = syntaxText;
 
-  // Generate Dynamic SePay VietQR (Techcombank 1104200601 + Auto Amount + Auto Syntax)
+// Generate Dynamic SePay VietQR (Techcombank 1104200601 + Auto Amount + Auto Syntax)
   const qrImg = document.getElementById('modalQrImage');
   if (qrImg) {
     qrImg.src = `https://qr.sepay.vn/img?acc=1104200601&bank=TCB&amount=${numericDeposit}&des=${encodeURIComponent(syntaxText)}`;
@@ -296,6 +296,60 @@ function goToStep2() {
 
   // Start checking payment status
   startPaymentPolling(phone, numericDeposit, customerName);
+}
+
+/* ============================================================
+   SUBMIT FREE CONSULTATION & DEMO (HIGHEST CONVERSION RATE)
+============================================================ */
+function submitFreeConsultation() {
+  const phoneInput = document.getElementById('customerPhone');
+  if (!phoneInput || !phoneInput.value.trim()) {
+    alert('Vui lòng nhập số điện thoại hoặc Zalo để Long gửi bản Demo nhé!');
+    phoneInput?.focus();
+    return;
+  }
+
+  const phone = phoneInput.value.trim();
+  const customerName = document.getElementById('customerName')?.value.trim() || 'Chưa để lại tên';
+  const serviceName = currentService.name || 'Gói Tư Vấn / Demo Theo Yêu Cầu';
+
+  const btn = document.getElementById('btnSubmitLead');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerText = '⏳ Đang gửi yêu cầu...';
+  }
+
+  // Play sound
+  playSuccessDing();
+
+  // Send lead notification directly to longlesinep114@gmail.com
+  const emailPayload = {
+    _subject: `[LEAD MỚI CẦN DEMO ZALO] ${customerName} - ${phone}`,
+    _template: "table",
+    "Trạng thái": "🔥 KHÁCH HÀNG YÊU CẦU NHẬN DEMO QUA ZALO",
+    "Tên khách hàng / Ngành nghề": customerName,
+    "Số điện thoại / Zalo": phone,
+    "Quan tâm gói": serviceName,
+    "Thời gian gửi": new Date().toLocaleString('vi-VN')
+  };
+
+  fetch("https://formsubmit.co/ajax/longlesinep114@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(emailPayload)
+  }).finally(() => {
+    alert('✓ Đã gửi yêu cầu thành công! Long sẽ liên hệ qua Zalo gửi bản Demo cho bạn trong 15-30 phút tới nhé.');
+    // Chuyển hướng hoặc mở Zalo
+    window.open(`https://zalo.me/0325477523`, '_blank');
+    closeModal();
+    if (btn) {
+      btn.disabled = false;
+      btn.innerText = '🚀 Gửi Yêu Cầu — Nhận Demo Miễn Phí Qua Zalo';
+    }
+  });
 }
 
 function goToStep1() {
