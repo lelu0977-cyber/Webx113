@@ -195,42 +195,68 @@
 
       const btn = document.getElementById('submit-btn');
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang khởi tạo đơn hàng...';
+      const paymentCode = 'DH' + Math.floor(10000 + Math.random() * 90000);
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-      try {
-        const res = await fetch('/api/orders', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            customer_name: name,
-            customer_phone: phone,
-            product_id: productId,
-            product_name: productName,
-            amount: amount,
-            status: 'pending'
-          })
-        });
-        const data = await res.json();
-        if (data.success) {
-          currentOrderId = data.order_id;
-          showQR(data, name, productName);
+      if (isLocal) {
+        try {
+          const res = await fetch('/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              customer_name: name,
+              customer_phone: phone,
+              product_id: productId,
+              product_name: productName,
+              amount: amount,
+              status: 'pending'
+            })
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success) {
+              currentOrderId = data.order_id;
+              showQR(data, name, productName);
+              btn.disabled = false;
+              btn.innerHTML = '<span>Tiến hành thanh toán</span> <i class="fa-solid fa-arrow-right"></i>';
+              return;
+            }
+          }
+        } catch (e) {
+          console.log('Local backend error, switching to client-mode:', e);
         }
-      } catch (err) {
-        // Fallback chế độ chạy tĩnh (khi deploy lên GitHub Pages)
-        const paymentCode = 'DH' + Math.floor(10000 + Math.random() * 90000);
-        const qrUrl = `https://qr.sepay.vn/img?bank=BIDV&acc=8852040649&template=compact&amount=${amount}&des=${paymentCode}`;
-        showQR({
-          qr_url: qrUrl,
-          bank: 'BIDV',
-          account: '8852040649',
-          account_name: 'LE THANH LONG',
-          amount: amount,
-          payment_code: paymentCode
-        }, name, productName);
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<span>Tiến hành thanh toán</span> <i class="fa-solid fa-arrow-right"></i>';
       }
+
+      // CHẾ ĐỘ PRODUCTION / GITHUB PAGES (Không gọi POST /api/orders để tránh lỗi 405)
+      const qrUrl = `https://qr.sepay.vn/img?bank=BIDV&acc=8852040649&template=compact&amount=${amount}&des=${paymentCode}`;
+      
+      // Lưu trực tiếp vào LocalStorage để trang admin.html đọc được ngay lập tức
+      const existingOrders = JSON.parse(localStorage.getItem('saved_orders')) || [];
+      const newOrderObj = {
+        id: existingOrders.length ? Math.max(...existingOrders.map(o => o.id)) + 1 : 1,
+        customer_name: name,
+        customer_phone: phone,
+        product_name: productName,
+        amount: amount,
+        status: 'pending',
+        payment_code: paymentCode,
+        created_at: new Date().toLocaleString('vi-VN')
+      };
+      existingOrders.unshift(newOrderObj);
+      localStorage.setItem('saved_orders', JSON.stringify(existingOrders));
+      currentOrderId = newOrderObj.id;
+
+      showQR({
+        qr_url: qrUrl,
+        bank: 'BIDV',
+        account: '8852040649',
+        account_name: 'LE THANH LONG',
+        amount: amount,
+        payment_code: paymentCode
+      }, name, productName);
+
+      btn.disabled = false;
+      btn.innerHTML = '<span>Tiến hành thanh toán</span> <i class="fa-solid fa-arrow-right"></i>';
     }
 
     function showQR(orderData, custName, prodName) {
@@ -244,7 +270,6 @@
       document.getElementById('qr-amount').innerText = Number(orderData.amount).toLocaleString('vi-VN') + ' đ';
       document.getElementById('qr-des').innerText = orderData.payment_code;
 
-      // Lưu info hiển thị màn hình success
       window.lastOrderInfo = {
         code: orderData.payment_code,
         name: custName,
@@ -252,22 +277,33 @@
         amount: Number(orderData.amount).toLocaleString('vi-VN') + ' đ'
       };
 
-      // Bắt đầu Polling kiểm tra xem trạng thái đã sang 'success' chưa
       if (pollInterval) clearInterval(pollInterval);
       pollInterval = setInterval(checkOrderStatus, 2500);
     }
 
     async function checkOrderStatus() {
       if (!currentOrderId) return;
-      try {
-        const res = await fetch('/api/order-status?id=' + currentOrderId);
-        const data = await res.json();
-        if (data.status === 'success') {
-          clearInterval(pollInterval);
-          showSuccess();
-        }
-      } catch (e) {
-        console.error(e);
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      if (isLocal) {
+        try {
+          const res = await fetch('/api/order-status?id=' + currentOrderId);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.status === 'success') {
+              clearInterval(pollInterval);
+              showSuccess();
+              return;
+            }
+          }
+        } catch (e) {}
+      }
+
+      // Check trong localStorage nếu chạy trên web thật / GitHub Pages
+      const saved = JSON.parse(localStorage.getItem('saved_orders')) || [];
+      const order = saved.find(o => o.id === currentOrderId);
+      if (order && order.status === 'success') {
+        clearInterval(pollInterval);
+        showSuccess();
       }
     }
 
