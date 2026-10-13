@@ -226,6 +226,31 @@
     let customersList = [];
     let ordersList = [];
 
+    const MOCK_ORDERS = [
+      {
+        id: 1,
+        customer_name: "Lê Thành Long",
+        customer_phone: "0977057714",
+        product_name: "🎯 Gói Test Thanh Toán Tự Động Sepay - 2.000 đ",
+        amount: 2000,
+        status: "pending",
+        payment_code: "DH62364",
+        created_at: "2026-10-12 17:36:47"
+      }
+    ];
+
+    const MOCK_CUSTOMERS = [
+      { id: 1, name: "Lê Thành Long", phone: "0977057714", zalo: "0977057714", created_at: "2026-10-12 17:30:30" },
+      { id: 2, name: "Nguyễn Văn An", phone: "0912345678", zalo: "0912345678", created_at: "2026-10-12 17:30:30" }
+    ];
+
+    const MOCK_PRODUCTS = [
+      { id: 1, name: "Gói Khởi Nghiệp (Landing Page)", type: "service", price: 1200000, stock: null },
+      { id: 2, name: "Gói Doanh Nghiệp Chuẩn SEO", type: "service", price: 2800000, stock: null },
+      { id: 3, name: "Gói Bán Hàng E-Commerce / Cao Cấp", type: "service", price: 5000000, stock: null },
+      { id: 4, name: "Áo Thun Đồng Phục Dev (Test vật lý)", type: "physical", price: 150000, stock: 49 }
+    ];
+
     async function loadData() {
       try {
         const [pRes, cRes, oRes] = await Promise.all([
@@ -233,14 +258,20 @@
           fetch('/api/customers').then(r => r.json()),
           fetch('/api/orders').then(r => r.json())
         ]);
-        productsList = pRes;
-        customersList = cRes;
-        ordersList = oRes;
+        productsList = (pRes && pRes.length) ? pRes : MOCK_PRODUCTS;
+        customersList = (cRes && cRes.length) ? cRes : MOCK_CUSTOMERS;
+        ordersList = (oRes && oRes.length) ? oRes : (JSON.parse(localStorage.getItem('saved_orders')) || MOCK_ORDERS);
         renderProducts();
         renderCustomers();
         renderOrders();
       } catch (err) {
-        console.error("Lỗi load data:", err);
+        // Chế độ chạy tĩnh trên GitHub Pages
+        productsList = MOCK_PRODUCTS;
+        customersList = MOCK_CUSTOMERS;
+        ordersList = JSON.parse(localStorage.getItem('saved_orders')) || MOCK_ORDERS;
+        renderProducts();
+        renderCustomers();
+        renderOrders();
       }
     }
 
@@ -483,12 +514,18 @@
 
     async function updateOrderStatus(id, status) {
       if (!confirm(`Xác nhận chuyển trạng thái đơn hàng #${id} sang "${status}"?`)) return;
-      await fetch('/api/orders/update-status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, status })
-      });
-      loadData();
+      try {
+        await fetch('/api/orders/update-status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, status })
+        });
+      } catch (err) {
+        // Fallback lưu local
+      }
+      ordersList = ordersList.map(o => o.id === id ? { ...o, status: status } : o);
+      localStorage.setItem('saved_orders', JSON.stringify(ordersList));
+      renderOrders();
     }
 
     async function deleteOrder(id) {

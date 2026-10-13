@@ -249,13 +249,10 @@ let sepayPollingInterval = null;
 
 function goToStep2() {
   const phoneInput = document.getElementById('customerPhone');
-  if (phoneInput && !phoneInput.value.trim()) {
-    alert('Vui lòng nhập số điện thoại hoặc Zalo để Long liên hệ bàn giao web nhé!');
-    phoneInput.focus();
-    return;
+  let phone = phoneInput ? phoneInput.value.trim() : '';
+  if (!phone) {
+    phone = '0325477523'; // Default để tạo cú pháp nếu chưa nhập
   }
-
-  const phone = phoneInput ? phoneInput.value.trim() : '';
   const customerName = document.getElementById('customerName')?.value.trim() || 'Khách hàng';
 
   // Determine numeric deposit

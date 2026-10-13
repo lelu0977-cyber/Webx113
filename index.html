@@ -39,6 +39,7 @@
         <li><a href="index.html" class="active">Trang Chủ</a></li>
         <li><a href="du-an.html">Dự Án Thực Tế</a></li>
         <li><a href="bang-gia.html">Bảng Giá</a></li>
+        <li><a href="thanh-toan.html" style="color:#38bdf8; font-weight:700;">⚡ Thanh Toán QR</a></li>
         <li><a href="#about">Về Webx113</a></li>
         <li><a href="tin-tuc.html">Cẩm Nang Web</a></li>
         <li><a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="nav-highlight">💬 Chat Zalo Với Long (0325.477.523)</a></li>
@@ -77,11 +78,14 @@
           </ul>
 
           <div class="hero-actions">
-            <button class="btn btn-primary btn-lg" onclick="openModal('Tư vấn thiết kế web siêu tốc')">
+            <a href="thanh-toan.html" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #ea580c, #f97316); text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
+              ⚡ Thanh Toán & Đặt Web Tự Động (QR)
+            </a>
+            <button class="btn btn-ghost" onclick="openModal('Tư vấn thiết kế web siêu tốc')" style="border-color:#ea580c; color:#fb923c;">
               🎁 Nhận Demo Miễn Phí (15 Phút)
             </button>
             <a href="https://zalo.me/0325477523" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:#0284c7; color:#38bdf8;">
-              💬 Nhắn Zalo: 0325.477.523
+              💬 Zalo: 0325.477.523
             </a>
             <div class="hero-price-tag">
               <small>Chi phí trọn gói</small>
@@ -853,7 +857,7 @@
 
               <div class="qr-scanner-frame">
                 <div class="qr-scan-line"></div>
-                <img id="modalQrImage" src="assets/img/qr-techcombank.jpg" alt="Mã QR Chuyển Tiền Techcombank Lê Thành Long" class="qr-scanner-img" />
+                <img id="modalQrImage" src="https://qr.sepay.vn/img?bank=BIDV&acc=8852040649&template=compact&amount=1400000&des=WEBX113" alt="Mã QR Chuyển Tiền BIDV Lê Thành Long" class="qr-scanner-img" />
               </div>
 
               <!-- SePay Status Box -->
