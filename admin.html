@@ -8,6 +8,31 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans min-h-screen">
+  <!-- SECURITY AUTH OVERLAY -->
+  <div id="admin-auth-gate" class="fixed inset-0 bg-slate-900 z-[9999] flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-8 shadow-2xl text-center">
+      <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <h2 class="text-2xl font-black text-slate-800 mb-1">Xác Thực Quản Trị</h2>
+      <p class="text-xs text-slate-500 mb-6">Trang quản trị nội bộ Webx113. Vui lòng nhập mã bảo mật để tiếp tục.</p>
+      
+      <form onsubmit="verifyAdminPass(event)" class="space-y-4">
+        <div>
+          <input type="password" id="admin-input-pass" placeholder="Nhập mật khẩu admin..." required 
+                 class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm text-center tracking-widest font-mono focus:ring-2 focus:ring-blue-500 outline-none">
+          <p id="auth-err-msg" class="text-xs text-red-500 mt-2 hidden">Mật khẩu không chính xác!</p>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow text-sm transition">
+          Mở Khóa Quản Trị
+        </button>
+      </form>
+      <div class="mt-4 pt-3 border-t border-slate-100">
+        <span class="text-[11px] text-slate-400">Gợi ý cho Reviewer: Mật khẩu mặc định là <code class="font-bold text-slate-600">admin123</code></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Top Navigation -->
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -21,6 +46,9 @@
         <a href="/thanh-toan" target="_blank" class="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center">
           <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Mở trang thanh toán
         </a>
+        <button onclick="logoutAdmin()" class="text-xs text-red-500 hover:text-red-700 font-medium ml-3 flex items-center">
+          <i class="fa-solid fa-right-from-bracket mr-1"></i> Khóa lại
+        </button>
       </div>
     </div>
   </header>
@@ -222,6 +250,37 @@
   </div>
 
   <script>
+    // BẢO MẬT TRANG ADMIN
+    const ADMIN_PASSWORD = "admin123"; // Mật khẩu truy cập
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem("admin_logged_in");
+      const gate = document.getElementById("admin-auth-gate");
+      if (isAuth === "true") {
+        gate.classList.add("hidden");
+      } else {
+        gate.classList.remove("hidden");
+        document.getElementById("admin-input-pass").focus();
+      }
+    }
+
+    function verifyAdminPass(e) {
+      e.preventDefault();
+      const input = document.getElementById("admin-input-pass").value;
+      const err = document.getElementById("auth-err-msg");
+      if (input === ADMIN_PASSWORD) {
+        sessionStorage.setItem("admin_logged_in", "true");
+        document.getElementById("admin-auth-gate").classList.add("hidden");
+        err.classList.add("hidden");
+      } else {
+        err.classList.remove("hidden");
+      }
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem("admin_logged_in");
+      location.reload();
+    }
+
     let productsList = [];
     let customersList = [];
     let ordersList = [];
@@ -535,6 +594,7 @@
     }
 
     // Tự động load mỗi 4 giây để cập nhật đơn hàng realtime
+    checkAuth();
     loadData();
     setInterval(loadData, 4000);
   </script>
